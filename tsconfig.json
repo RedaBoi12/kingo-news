@@ -10,6 +10,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "typeRoots":["node_modules/@types/node"],
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,

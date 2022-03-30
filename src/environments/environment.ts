@@ -3,6 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  firebase: {
+    apiKey: "AIzaSyCT9oQsOdGU-cjoa4UUWnNBxB4z0JCjjSg",
+    authDomain: "moroccan-news.firebaseapp.com",
+    projectId: "moroccan-news",
+    storageBucket: "moroccan-news.appspot.com",
+    messagingSenderId: "721922869140",
+    appId: "1:721922869140:web:e1e1e1a5be5a254c55f181",
+    databaseURL: "https://moroccan-news-default-rtdb.europe-west1.firebasedatabase.app"
+  },
   production: false
 };
 
