@@ -1,6 +1,8 @@
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { AuthGuard } from '../services/auth.guard';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +10,12 @@ import { AuthGuard } from '../services/auth.guard';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor(public auth: AuthService, public guard: AuthGuard) { }
-
+  constructor(public auth: AuthService, public guard: AuthGuard, public router: Router) { }
   ngOnInit(): void {
   }
 
-
+  SubmitSearch(value:any): void{
+      let link = `http://localhost:4200/search/${value}`;
+      window.open(link, '_self');
+  }
 }

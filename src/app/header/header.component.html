@@ -3,7 +3,7 @@
     <a title="logo" class="navbar-brand" routerLink="">
       <img src="https://th.bing.com/th/id/R.2663e5cd08194d30314a3f0b7a6c32e0?rik=dqDOQnLwcK2hBA&pid=ImgRaw&r=0" alt="" width="30" height="24">
     </a>
-    <a class="navbar-brand" routerLink="">Moroccan News</a>
+    <a class="navbar-brand" routerLink="">Kingo News</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,6 +50,10 @@
         </li>
       </ul>
       <form class="d-flex">
+        <form #sform="ngForm" class="form-inline my-2 my-lg-0 ml-auto">
+          <input #search class="form-control"name="search" id="search" required placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-red btn-md my-2 my-sm-0 ml-3" (click)="SubmitSearch(search.value)" type="submit">Search</button>
+        </form>
         <div *ngIf="this.guard.isLogged; then thenBlock else elseBlock"></div>
           <ng-template #thenBlock>
                <ul class="navbar-nav ml-auto">
@@ -72,9 +76,19 @@
               </ul>
           </ng-template>
           <ng-template #elseBlock>
-            <!-- <button type="button" class="btn btn-outline-warning" routerLink="login" >Signup with Email</button> -->
-            <button type="button" class="btn btn-outline-danger" (click)="this.auth.googleSignIn()" >Signup with Google</button>
-            <button type="button" class="btn btn-outline-danger" (click)="this.auth.googleLogIn()" >Login with Google</button>
+            <div class="collapse navbar-collapse dropleft" id="navbarSupportedContent-333">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown active" dropdown>
+                  <button type="button" dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    GOOGLE AUTH
+                  </button>
+                <div *dropdownMenu class="dropdown-menu dropdown-menu-left dropdown dropdown-primary" role="menu">
+                  <a class="dropdown-item waves-light" mdbWavesEffect (click)="this.auth.googleLogIn()">Login with Google</a>
+                  <a class="dropdown-item waves-light" mdbWavesEffect (click)="this.auth.googleSignIn()">Register with Google</a>
+                </div>
+              </li>
+            </ul>
+            </div>
           </ng-template>
       </form>
     </div>

@@ -1,3 +1,4 @@
+import { SearchComponent } from './categories/search/search.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { child } from 'firebase/database';
 import { NewsapiService } from './services/newsapi.service';
@@ -39,7 +40,13 @@ const routes: Routes = [
     {path: 'contact', component:ContactComponent},
     {path: 'login', component: LoginComponent},
     {path: 'manage', component: ManageaccountComponent, canActivate: [AuthGuard]},
-    {path: '**', component: PagenotfoundComponent}
+    {path: 'search', component: SearchComponent},
+    {path: 'search/:search', component: SearchComponent},
+
+
+
+
+    {path: '**', component: PagenotfoundComponent},
 ];
 
 

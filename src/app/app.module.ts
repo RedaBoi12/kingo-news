@@ -8,7 +8,7 @@ import { HeadlinesComponent } from './categories/headlines/headlines.component';
 import { TechnewsComponent } from './categories/technews/technews.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MDBBootstrapModule, } from 'angular-bootstrap-md';
+import { CarouselComponent, MDBBootstrapModule, } from 'angular-bootstrap-md';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
@@ -52,6 +52,8 @@ import { IndexpageComponent } from './indexpage/indexpage.component';
 import { FaqComponent } from './faq/faq.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NewstellerComponent } from './newsteller/newsteller.component';
+import { CommentsComponent } from './comments/comments.component';
+import { SearchComponent } from './categories/search/search.component';
 
 
 @NgModule({
@@ -77,7 +79,9 @@ import { NewstellerComponent } from './newsteller/newsteller.component';
     IndexpageComponent,
     FaqComponent,
     PagenotfoundComponent,
-    NewstellerComponent
+    NewstellerComponent,
+    CommentsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -116,6 +120,9 @@ import { NewstellerComponent } from './newsteller/newsteller.component';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore())
     
+  ],
+  exports:[
+    CommentsComponent
   ],
   providers: [
     NewsapiService,
