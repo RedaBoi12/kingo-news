@@ -1,4 +1,3 @@
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NewsapiService } from './services/newsapi.service'
@@ -8,7 +7,7 @@ import { HeadlinesComponent } from './categories/headlines/headlines.component';
 import { TechnewsComponent } from './categories/technews/technews.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { CarouselComponent, MDBBootstrapModule, } from 'angular-bootstrap-md';
+import { MDBBootstrapModule, } from 'angular-bootstrap-md';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
@@ -47,13 +46,12 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { UserlistComponent } from './admin/userlist/userlist.component';
 import { EdituserComponent } from './admin/edituser/edituser.component';
-import { LoginComponent } from './login/login.component';
 import { IndexpageComponent } from './indexpage/indexpage.component';
 import { FaqComponent } from './faq/faq.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NewstellerComponent } from './newsteller/newsteller.component';
-import { CommentsComponent } from './comments/comments.component';
 import { SearchComponent } from './categories/search/search.component';
+import { AdminComponent } from './admin/admin/admin.component';
 
 
 @NgModule({
@@ -75,13 +73,12 @@ import { SearchComponent } from './categories/search/search.component';
     ContactComponent,
     UserlistComponent,
     EdituserComponent,
-    LoginComponent,
     IndexpageComponent,
     FaqComponent,
     PagenotfoundComponent,
     NewstellerComponent,
-    CommentsComponent,
-    SearchComponent
+    SearchComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -120,9 +117,6 @@ import { SearchComponent } from './categories/search/search.component';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore())
     
-  ],
-  exports:[
-    CommentsComponent
   ],
   providers: [
     NewsapiService,

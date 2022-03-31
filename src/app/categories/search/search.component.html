@@ -1,4 +1,6 @@
-<br><br><br><br>
+<div class="nav-back">
+  
+</div>
 <nav class="navbar navbar-light bg-light shadow-lg">
    <div class="container-fluid">
      <span class="navbar-brand mb-0 h1" id="headlines-anchor">Search Results - {{searchResult.length}}</span>
@@ -8,12 +10,12 @@
      <div class="row">
          <div class="col-lg-3 mt-3 mb-3" 
          *ngFor="let news of searchResult">
-           <a [routerLink]="['/business',news.title,news.urlToImage,news.content,news.description,news.publishedAt,news.url]" target="_blank" style="color:black">
+           <a [routerLink]="['/business',news.title,news.urlToImage,news.content,news.description,news.publishedAt,news.url]" target="_blank">
                <div class="card">
                  <img src={{news.urlToImage}} alt="" width="100%" height="300px" class="card-img-top">
                  <div class="card-body">
                      <h3 class="card-title">{{news.title}}</h3>
-                     <span style="font-size: 10px;" class="card-title">Published at: {{news.publishedAt}}</span>
+                     <span class="card-title">Published at: {{news.publishedAt}}</span>
                      <br>
                  </div>
              </div>

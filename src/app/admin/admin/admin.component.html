@@ -1,0 +1,56 @@
+<div class="nav-back">
+
+</div>
+<div class="container my-5 z-depth-1">
+
+
+    <!--Section: Content-->
+    <section class="dark-grey-text p-5">
+  
+      <!-- Grid row -->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-5 mb-4 mb-md-0">
+  
+          <div class="view">
+            <img src="https://mdbootstrap.com/img/illustrations/undraw_Group_chat_unwm.svg" class="img-fluid" alt="smaple image">
+          </div>
+  
+        </div>
+        <!-- Grid column -->
+  
+        <!-- Grid column -->
+        <div class="col-md-7 mb-lg-0 mb-4">
+  
+          <!-- Form -->
+          <form #aForm="ngForm" (submit)="checkCode(code.value)">
+  
+            <!-- Section heading -->
+            <h3 class="font-weight-bold my-3">Admin Panel</h3>
+            
+            <p class="text-muted mb-4 pb-2">Please enter the admin security code to confirm your legitimacy.</p>
+   
+            <div class="input-group">
+              <input #code type="email" class="form-control" placeholder="Enter security code" aria-label="Enter code" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-md btn-danger rounded-right m-0 px-3 py-2 z-depth-0 waves-effect" type="submit" id="button-addon2">Confirm</button>
+              </div>
+            </div>
+            <small class="form-text black-text"><strong>* Please contact someone in charge incase you forgot the code.</strong></small>
+            
+          </form>
+          <!-- Form -->
+  
+        </div>
+        <!-- Grid column -->
+  
+      </div>
+      <!-- Grid row -->
+      
+    </section>
+    <!--Section: Content-->
+  
+  
+  </div>
+  <br><br><br><br><br>

@@ -1,96 +1,139 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a title="logo" class="navbar-brand" routerLink="">
-      <img src="https://th.bing.com/th/id/R.2663e5cd08194d30314a3f0b7a6c32e0?rik=dqDOQnLwcK2hBA&pid=ImgRaw&r=0" alt="" width="30" height="24">
-    </a>
-    <a class="navbar-brand" routerLink="">Kingo News</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="top" href="#top">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#testimonials">Testimonials</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#pricing">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#history">History</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#team">Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#clients" style="margin-right: 70px;">Clients</a>
-        </li>
-          <li class="nav-item dropdown active" dropdown>
-            <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>Categories<span class="caret"></span></a>
-            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="trending"><mdb-icon fas icon="star"></mdb-icon> - Trending</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="tech"><mdb-icon fas icon="cog"></mdb-icon> - Tech</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="business"><mdb-icon fas icon="briefcase"></mdb-icon> - Business</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="entertainment"><mdb-icon fas icon="grin-beam"></mdb-icon> - Entertainment</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="health"><mdb-icon fas icon="heart"></mdb-icon> - Health</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="science"><mdb-icon fas icon="flask"></mdb-icon> - Science</a>
-              <a class="dropdown-item waves-light" mdbWavesEffect routerLink="sports"><mdb-icon fas icon="futbol"></mdb-icon> - Sports</a>
-            </div>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="contact">Find us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="faq">FAQ</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <form #sform="ngForm" class="form-inline my-2 my-lg-0 ml-auto">
-          <input #search class="form-control"name="search" id="search" required placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-red btn-md my-2 my-sm-0 ml-3" (click)="SubmitSearch(search.value)" type="submit">Search</button>
-        </form>
-        <div *ngIf="this.guard.isLogged; then thenBlock else elseBlock"></div>
-          <ng-template #thenBlock>
-               <ul class="navbar-nav ml-auto">
-<!--                 <li class="nav-item active dropdown active">
-                  <input class="form-control input-group-sm" title="admin" type="password" placeholder="Admin Key.."><button class="btn btn-outline-secondary btn-sm" title="adminConfirm">Confirm Key</button>
-                </li> -->
-                <li class="nav-item active">
-                  <a class="nav-link waves-light" mdbWavesEffect><mdb-icon fas icon="cog"></mdb-icon> Settings</a>
-                </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown active" dropdown>
-                  <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                    <mdb-icon fas icon="user"></mdb-icon> {{this.auth.auth.currentUser?.email}} <span class="caret"></span></a>
-                  <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-                    <a class="dropdown-item waves-light" mdbWavesEffect routerLink="manage">My account</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="this.auth.signout()">Log out</a>
-                  </div>
-                </li>
+<nav>
+  <header class="site-navbar" role="banner">
+
+    <div class="container">
+      <div class="row align-items-center">
+        
+        <div class="col-11 col-xl-2">
           
-              </ul>
-          </ng-template>
-          <ng-template #elseBlock>
-            <div class="collapse navbar-collapse dropleft" id="navbarSupportedContent-333">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item dropdown active" dropdown>
-                  <button type="button" dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    GOOGLE AUTH
-                  </button>
-                <div *dropdownMenu class="dropdown-menu dropdown-menu-left dropdown dropdown-primary" role="menu">
-                  <a class="dropdown-item waves-light" mdbWavesEffect (click)="this.auth.googleLogIn()">Login with Google</a>
-                  <a class="dropdown-item waves-light" mdbWavesEffect (click)="this.auth.googleSignIn()">Register with Google</a>
-                </div>
-              </li>
-            </ul>
+          <h1 class="mb-0 site-logo"><a routerLink="" class="text-white mb-0"><strong>Kingo </strong>News</a></h1><br> 
+          <form #sform="ngForm" class="input-group">
+            <div class="form-outline border border-light border-top-0">
+              <input #search title="Write Query" id="search-focus" type="search" id="form1" class="form-control text-light" (keydown)="this.submitevent($event, search.value)"/>
+              <label class="form-label text-light" for="form1">Search</label>
             </div>
-          </ng-template>
-      </form>
-    </div>
-  </div>
+          </form>
+        </div>
+        <div class="col-12 col-md-10 d-none d-xl-block">
+          <nav class="site-navigation position-relative text-right" role="navigation">
+            <div *ngIf="this.guard.isLogged; then thenBlock else elseBlock"></div>
+            <ng-template #thenBlock>
+              <div *ngIf="this.guard.isAdmin; then adminBlock else userBlock"></div>
+              <ng-template #userBlock>
+                <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                  <li class="has-children">
+                    <a routerLink=""><span>Home<mdb-icon fas icon="angle-double-down"></mdb-icon></span></a>
+                    <ul class="dropdown arrow-top">
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#testimonials">Testimonials</a></li>
+                      <li><a href="#pricing">Pricing</a></li>
+                      <li><a href="#history">History</a></li>
+                      <li><a href="#team">Team</a></li>
+                      <li><a href="#clients">Sponsors</a></li>
+                    </ul>
+                  </li>
+                    <li class="has-children">
+                      <a routerLink="trending"><span>Trending News<mdb-icon fas icon="angle-double-down"></mdb-icon></span></a>
+                      <ul class="dropdown arrow-top">
+                        <li><a class="disabled bg-primary text-light">Categories</a></li>
+                        <li><a routerLink="tech">Tech</a></li>
+                        <li><a routerLink="business">Business</a></li>
+                        <li><a routerLink="entertainment">Entertainment</a></li>
+                        <li><a routerLink="health">Health</a></li>
+                        <li><a routerLink="science">Science</a></li>
+                        <li><a routerLink="sports">Sports</a></li>
+                      </ul>
+                    </li>
+                  <li><a routerLink="contact"><span>Contact Us</span></a></li>
+                  <li><a routerLink="faq"><span>FAQ</span></a></li>
+                  <li class="has-children">
+                    <a routerLink=""><span>Account<mdb-icon fas icon="angle-double-down"></mdb-icon></span></a>
+                    <ul class="dropdown arrow-top">
+                      <li><a routerLink="manage">Manage Account</a></li>
+                      <li><a (click)="this.auth.signout()">Logout</a></li>
+                    </ul>
+                  </li>
+                  <br>
+                </ul>
+              </ng-template>
+              <ng-template #adminBlock>
+                <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                  <li class="has-children">
+                    <a routerLink=""><span>Home<mdb-icon fas icon="angle-double-down"></mdb-icon></span></a>
+                    <ul class="dropdown arrow-top">
+                      <li><a href="#about">About</a></li>
+                      <li><a href="#testimonials">Testimonials</a></li>
+                      <li><a href="#pricing">Pricing</a></li>
+                      <li><a href="#history">History</a></li>
+                      <li><a href="#team">Team</a></li>
+                      <li><a href="#clients">Sponsors</a></li>
+                    </ul>
+                  </li>
+                    <li class="has-children">
+                      <a routerLink="trending"><span>Trending News<mdb-icon fas icon="angle-double-down"></mdb-icon></span></a>
+                      <ul class="dropdown arrow-top">
+                        <li><a class="disabled bg-primary text-light">Categories</a></li>
+                        <li><a routerLink="tech">Tech</a></li>
+                        <li><a routerLink="business">Business</a></li>
+                        <li><a routerLink="entertainment">Entertainment</a></li>
+                        <li><a routerLink="health">Health</a></li>
+                        <li><a routerLink="science">Science</a></li>
+                        <li><a routerLink="sports">Sports</a></li>
+                      </ul>
+                    </li>
+                  <li><a routerLink="contact"><span>Contact Us</span></a></li>
+                  <li><a routerLink="faq"><span>FAQ</span></a></li>
+                  <li class="has-children">
+                    <a routerLink=""><span>Account<mdb-icon fas icon="angle-double-down"></mdb-icon></span></a>
+                    <ul class="dropdown arrow-top">
+                      <li><a routerLink="manage">Manage Account</a></li>
+                      <li><a routerLink="admin">Admin Panel</a></li>
+                      <li><a (click)="this.auth.signout()">Logout</a></li>
+                    </ul>
+                  </li>
+                  <br>
+                </ul>
+              </ng-template>
+            </ng-template>
+            <ng-template #elseBlock> 
+              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
+                <li class="has-children">
+                  <a routerLink=""><span>Home<mdb-icon fas icon="angle-double-down"></mdb-icon></span></a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#history">History</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#clients">Sponsors</a></li>
+                  </ul>
+                  <li class="has-children">
+                    <a routerLink="trending"><span>Trending News<mdb-icon fas icon="angle-double-down"></mdb-icon></span></a>
+                    <ul class="dropdown arrow-top">
+                      <li><a class="disabled bg-primary text-light">Categories</a></li>
+                      <li><a routerLink="tech">Tech</a></li>
+                      <li><a routerLink="business">Business</a></li>
+                      <li><a routerLink="entertainment">Entertainment</a></li>
+                      <li><a routerLink="health">Health</a></li>
+                      <li><a routerLink="science">Science</a></li>
+                      <li><a routerLink="sports">Sports</a></li>
+                    </ul>
+                <li><a routerLink="contact"><span>Contact Us</span></a></li>
+                <li><a routerLink="faq"><span>FAQ</span></a></li>
+                <li><a (click)="this.auth.googleSignIn()"><span><mdb-icon fab icon="google"></mdb-icon> - Signup</span></a></li>
+                <li><a (click)="this.auth.googleLogIn()"><span><mdb-icon fab icon="google"></mdb-icon> - Login</span></a></li>
+              </ul>
+            </ng-template>
+          </nav>
+        </div>
+
+
+        <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3 ppv"><a href="#" class="site-menu-toggle js-menu-toggle text-white"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+
+      </div>
+  </header>
+
 </nav>
+

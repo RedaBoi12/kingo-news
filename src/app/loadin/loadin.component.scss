@@ -1,8 +1,12 @@
 .bg-image{
-    background-image: url('https://journalistsresource.org/wp-content/uploads/2019/07/Crowd-of-journalists.jpg');
-        height: 900px;
+    background-image: url('../../assets/Crowd-of-journalists.png');
+        height: 1000px;
 }
 
 .mask{
     background-color: rgba(0, 0, 0, 0.6);
+}
+
+.dvr{
+    margin-right: 20px !important;
 }

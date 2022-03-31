@@ -18,4 +18,11 @@ export class HeaderComponent implements OnInit {
       let link = `http://localhost:4200/search/${value}`;
       window.open(link, '_self');
   }
+
+  submitevent(e:any, value:string){
+    console.log(value);
+    if (e.key === "Enter") {
+      this.SubmitSearch(value);
+    }
+  }
 }

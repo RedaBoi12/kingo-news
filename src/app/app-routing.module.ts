@@ -1,3 +1,5 @@
+import { UserlistComponent } from './admin/userlist/userlist.component';
+import { AdminComponent } from './admin/admin/admin.component';
 import { SearchComponent } from './categories/search/search.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { child } from 'firebase/database';
@@ -7,7 +9,6 @@ import { IndexpageComponent } from './indexpage/indexpage.component';
 import { ArticledetailsComponent } from './categories/articledetails/articledetails.component';
 import { AuthGuard } from './services/auth.guard';
 import { ManageaccountComponent } from './manageaccount/manageaccount.component';
-import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { SportsnewsComponent } from './categories/sportsnews/sportsnews.component';
 import { HealthnewsComponent } from './categories/healthnews/healthnews.component';
@@ -38,11 +39,11 @@ const routes: Routes = [
     {path: 'sports', component: SportsnewsComponent},
     {path: 'sports/:title/:urlToImage/:content/:description/:publishedAt/:url', component: ArticledetailsComponent},
     {path: 'contact', component:ContactComponent},
-    {path: 'login', component: LoginComponent},
     {path: 'manage', component: ManageaccountComponent, canActivate: [AuthGuard]},
     {path: 'search', component: SearchComponent},
     {path: 'search/:search', component: SearchComponent},
-
+    {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
+    {path: 'adminpanel', component: UserlistComponent, canActivate: [AuthGuard]},
 
 
 

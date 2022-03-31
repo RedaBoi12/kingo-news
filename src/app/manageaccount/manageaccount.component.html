@@ -1,4 +1,6 @@
-<div class="container rounded bg-white mt-5 mb-5">
+<div class="nav-back">
+  </div>
+    <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img title="." class="rounded-circle mt-5" src={{this.auth.loadUserphoto()}} width="90"><span class="font-weight-bold">{{this.auth.loadUserfullname()}}</span><span class="text-black-50">{{this.auth.loadUseremail()}}</span><span>- Encrypted Google Data -</span></div>
@@ -19,7 +21,7 @@
                     <div class="col-md-6"><label class="labels">Country</label><input ngModel type="text" class="form-control" id="country" name="country" placeholder="Country" value={{this.auth.loadUsercountry()}}/></div>
                     <div class="col-md-6"><label class="labels">City/State</label><input ngModel type="text" class="form-control" id="city" name="city" placeholder="City / State" value={{this.auth.loadUsercity()}}/></div>
                 </div>
-                <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="submit">Save Profile</button></div>
+                <div class="mt-5 text-center"><button class="btn btn-primary " type="submit">Save Profile</button></div>
                 <div class="mt-5 text-center"><button class="btn btn-danger delete-button" type="button"   (click)="deleteme()">Delete Account</button></div>
             </form>
             </div>
