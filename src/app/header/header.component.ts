@@ -1,3 +1,4 @@
+import { AdminGuard } from './../services/admin.guard';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -10,7 +11,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  constructor(public auth: AuthService, public guard: AuthGuard, public router: Router) { }
+  constructor(public auth: AuthService, public guard: AuthGuard, public router: Router, public admin: AdminGuard) { }
   ngOnInit(): void {
   }
 

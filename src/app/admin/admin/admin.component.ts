@@ -12,23 +12,19 @@ import { getDatabase, onValue, ref } from 'firebase/database';
 export class AdminComponent implements OnInit {
 
   constructor(public router: Router, public guard: AuthGuard, public sb: SnackbarService) { }
-  admincode='';
+
+  admincode:string='';
+
   ngOnInit(): void {
-    
-  }
-  readCode():string{
     const db = getDatabase();
     const starCountRef = ref(db, 'admin-code');
     onValue(starCountRef, (snapshot) => {
-      const data = snapshot.val();
-      this.admincode = data;
+      this.admincode = snapshot.val();
     });
-    return this.admincode;
-
   }
+  
   checkCode(value:string){
-    this.readCode();
-    if(value = this.admincode){
+    if(value == this.admincode){
       this.sb.openSnackBar('Admin Code Secured','Horray!');
       this.router.navigate(['adminpanel']);
     }

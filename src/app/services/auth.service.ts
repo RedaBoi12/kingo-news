@@ -1,3 +1,4 @@
+import { AdminGuard } from './admin.guard';
 import { AuthGuard } from './auth.guard';
 import { SnackbarService } from './snackbar.service';
 import { Injectable } from '@angular/core';
@@ -10,7 +11,7 @@ import { Router} from '@angular/router';
 })
 export class AuthService {
 
-  constructor(public auth: Auth, public guard: AuthGuard, public snack: SnackbarService, private router: Router) { }
+  constructor(public auth: Auth, public guard: AuthGuard, public snack: SnackbarService, private router: Router, public admin: AdminGuard) { }
   googleSignIn(){
     const provider = new GoogleAuthProvider();
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
@@ -62,8 +63,8 @@ export class AuthService {
         const refr =  ref(database, 'users/' + this.auth.currentUser?.uid + '/rank');
         onValue(refr, (snapshot) => {
           const data = snapshot.val();
-          if(data == 'admin') this.guard.isAdmin = true;
-          else this.guard.isAdmin = false;
+          if(data == 'admin') this.admin.Admin = true;
+          else this.admin.Admin = false;
         });
 
       }).catch((error) => {
@@ -83,7 +84,7 @@ export class AuthService {
     signOut(this.auth).then(() => {
       this.snack.openSnackBar(`${this.auth.currentUser?.email} Logged Out!`,'Horray!');
       this.guard.isLogged = false;
-      this.guard.isAdmin = false;
+      this.admin.Admin = false;
       this.router.navigate(['']);
     }).catch((error) => {
       this.snack.openSnackBar(`${error.message}`,'Oops!');
