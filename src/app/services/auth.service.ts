@@ -1,3 +1,4 @@
+import { User } from '../user';
 import { AdminGuard } from './admin.guard';
 import { AuthGuard } from './auth.guard';
 import { SnackbarService } from './snackbar.service';
@@ -26,10 +27,11 @@ export class AuthService {
                 fullname: user.displayName,
                 email: user.email,
                 photo: user.photoURL,
-                rank: 'member',
+                rank: 'Member',
                 country: '',
                 city: '',
-                phone: ''
+                phone: '',
+                SignedIn: Date()
               })               
          
         this.snack.openSnackBar(`${user.email} Signed Up`,'Horray!');
@@ -81,8 +83,8 @@ export class AuthService {
       });
   }
   signout(){
+    this.snack.openSnackBar(`${this.auth.currentUser?.email} Logged Out!`,'Horray!');
     signOut(this.auth).then(() => {
-      this.snack.openSnackBar(`${this.auth.currentUser?.email} Logged Out!`,'Horray!');
       this.guard.isLogged = false;
       this.admin.Admin = false;
       this.router.navigate(['']);
@@ -100,9 +102,12 @@ export class AuthService {
       rank: 'member',
       country: value.country,
       city: value.city,
-      phone: value.phone
+      phone: value.phone,
+      SignedIn: this.loadUserSignedIn()
     })
     this.snack.openSnackBar('Information Saved','Horray!');
+    this.signout();
+    this.snack.openSnackBar('Account Refreshed, Please Login','Horray!');
   }
 
   deleteUser(){
@@ -111,73 +116,6 @@ export class AuthService {
     this.guard.isLogged = false;
     this.router.navigate(['']);
   }
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-  loadUserfullname():string{
-    let fullname= '';
-    const db = getDatabase();
-    const fullnameRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/fullname');
-    onValue(fullnameRef, (snapshot) => {
-      fullname = snapshot.val();
-    });
-    return fullname;
-  }
-  loadUserphone():string{
-    let phone= '';
-    const db = getDatabase();
-    const numberRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/phone');
-    onValue(numberRef, (snapshot) => {
-      phone = snapshot.val();
-    });
-    return phone;
-  }
-  loadUseremail():string{
-    let email= '';
-    const db = getDatabase();
-    const emailRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/email');
-    onValue(emailRef, (snapshot) => {
-      email = snapshot.val();
-    });
-    return email;
-  }
-  loadUserphoto():string{
-    let photo= '';
-    const db = getDatabase();
-    const photoRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/photo');
-    onValue(photoRef, (snapshot) => {
-      photo = snapshot.val();
-    });
-    return photo;
-  }
-  loadUsercountry():string{
-    let country= '';
-    const db = getDatabase();
-    const countryRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/country');
-    onValue(countryRef, (snapshot) => {
-      country = snapshot.val();
-    });
-    return country;
-  }
-
-  loadUsercity():string{
-    let city= '';
-    const db = getDatabase();
-    const cityRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/city');
-    onValue(cityRef, (snapshot) => {
-      city = snapshot.val();
-    });
-    return city;
-  }
-
-
-  UserCheck(){
-    const db = getDatabase();
-    const Ref = ref(db, 'users/' + this.auth.currentUser?.uid + '/fullname');
-    onValue(Ref, (snapshot) => {
-      const data = snapshot.val();
-      if (data == '') this.guard.newUser = true;
-      else this.guard.newUser = false;
-    });
-  }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -185,50 +123,71 @@ export class AuthService {
 
 
 
+loadUserfullname():string{
+  let fullname= '';
+  const db = getDatabase();
+  const fullnameRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/fullname');
+  onValue(fullnameRef, (snapshot) => {
+    fullname = snapshot.val();
+  });
+  return fullname;
+}
+loadUserphone():string{
+  let phone= '';
+  const db = getDatabase();
+  const numberRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/phone');
+  onValue(numberRef, (snapshot) => {
+    phone = snapshot.val();
+  });
+  return phone;
+}
+loadUseremail():string{
+  let email= '';
+  const db = getDatabase();
+  const emailRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/email');
+  onValue(emailRef, (snapshot) => {
+    email = snapshot.val();
+  });
+  return email;
+}
+loadUserphoto():string{
+  let photo= '';
+  const db = getDatabase();
+  const photoRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/photo');
+  onValue(photoRef, (snapshot) => {
+    photo = snapshot.val();
+  });
+  return photo;
+}
+loadUsercountry():string{
+  let country= '';
+  const db = getDatabase();
+  const countryRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/country');
+  onValue(countryRef, (snapshot) => {
+    country = snapshot.val();
+  });
+  return country;
+}
 
+loadUsercity():string{
+  let city= '';
+  const db = getDatabase();
+  const cityRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/city');
+  onValue(cityRef, (snapshot) => {
+    city = snapshot.val();
+  });
+  return city;
+}
 
-
-
-/*   ReadUserFirstName(){
-    const db = getDatabase();
-    const starCountRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/firstname');
-    onValue(starCountRef, (snapshot) => {
-      const data = snapshot.val();
-    });
-  } */
-
-
-
-      /*   emailSignIn(value:any){
-
-          const auth = getAuth();
-          createUserWithEmailAndPassword(auth, value.email, value.password)
-            .then((userCredential) => {
-              console.log("Signed in");
-              const user = userCredential.user;
-              // ...
-            })
-            .catch((error) => {
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              console.log(errorMessage);
-            });
-        }
-        
-        emaillogIn(value:any){
-          signInWithEmailAndPassword(this.auth, value.emailLogin, value.passwordLogin)
-          .then((userCredential) => {
-            this.snack.openSnackBar(`${value.emailLogin} LoggedIn`,'Horaay!'); 
-            const user = userCredential.user;
-            // ...
-          })
-          .catch((error) => {
-            const errorCode = error.code;
-            this.snack.openSnackBar(`Couldn't Log In`,'Oops!'); 
-            const errorMessage = error.message;
-          });
-        } */
-
+loadUserSignedIn():string{
+  let SignedIn= '';
+  const db = getDatabase();
+  const SignedInRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/SignedIn');
+  onValue(SignedInRef, (snapshot) => {
+    SignedIn = snapshot.val();
+  });
+  return SignedIn;
+}
 
 
 }

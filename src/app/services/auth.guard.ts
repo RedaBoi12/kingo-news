@@ -10,7 +10,6 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Rout
 })
 export class AuthGuard implements CanActivate {
   isLogged: boolean = false;
-  newUser: boolean = false;
   constructor(private afAuth: Auth, public sbService: SnackbarService, public router: Router){
     
   }

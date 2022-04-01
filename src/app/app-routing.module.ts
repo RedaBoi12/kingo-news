@@ -1,3 +1,4 @@
+import { EdituserComponent } from './admin/edituser/edituser.component';
 import { UserlistComponent } from './admin/userlist/userlist.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { SearchComponent } from './categories/search/search.component';
@@ -43,7 +44,8 @@ const routes: Routes = [
     {path: 'search', component: SearchComponent},
     {path: 'search/:search', component: SearchComponent},
     {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
-    {path: 'adminpanel', component: UserlistComponent, canActivate: [AuthGuard]},
+    {path: 'adminpanel', component: UserlistComponent},
+    {path: 'edit/:uid', component: EdituserComponent},
 
 
 
