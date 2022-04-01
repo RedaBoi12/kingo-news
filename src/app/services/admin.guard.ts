@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class AdminGuard implements CanActivate {
   constructor(public auth: Auth, public router: Router, public sbService: SnackbarService){}
-  Admin:boolean = false;
+  Admin!:boolean;
   database = getDatabase();
 
   
@@ -23,13 +23,11 @@ export class AdminGuard implements CanActivate {
         if(data == 'admin') this.Admin = true;
         else this.Admin = false;
       });
-    const isAdmin = this.Admin;
-    if (!isAdmin){
+    if (!this.Admin){
       this.router.navigate(['']);
-      this.Admin = false;
-      this.sbService.openSnackBar(`Only Admins can access this page`, 'Oops!');
+      this.sbService.openSnackBar(`Only Admins can access this page`, '');
     }
-    return isAdmin;
+    return this.Admin;
 
   }
   

@@ -1,4 +1,5 @@
 import { EdituserComponent } from './admin/edituser/edituser.component';
+import { AdminGuard } from './services/admin.guard';
 import { UserlistComponent } from './admin/userlist/userlist.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { SearchComponent } from './categories/search/search.component';
@@ -20,7 +21,7 @@ import { AppComponent } from './app.component';
 import { TechnewsComponent } from './categories/technews/technews.component';
 import { HeadlinesComponent } from './categories/headlines/headlines.component';
 import { NgModule, Component } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 
 const routes: Routes = [
     {path: '', component: IndexpageComponent, pathMatch:'full'},
@@ -44,8 +45,8 @@ const routes: Routes = [
     {path: 'search', component: SearchComponent},
     {path: 'search/:search', component: SearchComponent},
     {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
-    {path: 'adminpanel', component: UserlistComponent},
-    {path: 'edit/:uid', component: EdituserComponent},
+    {path: 'adminpanel', component: UserlistComponent, canActivate: [AuthGuard]},
+    {path: 'edit/:uid', component: EdituserComponent, canActivate: [AuthGuard]},
 
 
 

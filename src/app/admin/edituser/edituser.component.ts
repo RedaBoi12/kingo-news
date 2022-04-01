@@ -1,3 +1,4 @@
+import { AdminGuard } from './../../services/admin.guard';
 import { SnackbarService } from './../../services/snackbar.service';
 import { AuthService } from './../../services/auth.service';
 import { User } from '../../user';
@@ -12,7 +13,7 @@ import { getDatabase, onValue, ref, remove, set } from 'firebase/database';
 })
 export class EdituserComponent implements OnInit {
 
-  constructor(public aroute: ActivatedRoute, public auth: AuthService, public router: Router, public snack: SnackbarService) { }
+  constructor(public aroute: ActivatedRoute, public auth: AuthService, public router: Router, public snack: SnackbarService, public aguard: AdminGuard) { }
   currentUser:any = [];
   ngOnInit(): void {
     const db = getDatabase();
@@ -21,8 +22,6 @@ export class EdituserComponent implements OnInit {
     onValue(Ref, (snapshot) => {
       this.currentUser = snapshot.val();
     });
-
-    console.log(this.currentUser);
   }
 
   deleteme(){
@@ -50,6 +49,11 @@ export class EdituserComponent implements OnInit {
     })
     this.snack.openSnackBar('Information Saved','Horray!');
     this.router.navigate(['adminpanel']);
+  }
+
+
+  adminOn(){
+    this.aguard.Admin = true;
   }
 
 }

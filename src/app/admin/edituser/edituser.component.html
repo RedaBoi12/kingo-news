@@ -1,25 +1,27 @@
 <div class="nav-back">
 </div>
   <div class="container rounded bg-white mt-5 mb-5">
+    <div class="mt-5 text-center"><button class="btn btn-primary" onclick="this.adminOn()">Back</button></div>
   <div class="row">
       <div class="col-md-3 border-right">
           <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img title="." class="rounded-circle mt-5" src={{this.currentUser.photo}} width="90"><span class="font-weight-bold">{{this.currentUser.fullname}}</span><span class="text-black-50">{{this.currentUser.email}}</span><span>- Created at: {{this.currentUser.SignedIn}} -</span></div>
+          <div class="mt-5 text-center"><button class="btn btn-warning" >Edit User Data</button></div>
       </div>
       <div class="col-md-5 ">
           <div class="p-3 py-5">
               <div class="d-flex justify-content-between align-items-center mb-3">
-                  <h6 class="text-right">Edit your profile</h6>
+                  <h6 class="text-right">Viewing profile</h6>
               </div>
               <form #UserForm="ngForm" (ngSubmit)="this.modifyUser(UserForm.value)">
               <div class="row mt-2">
                   
-                  <div class="col-md-12"><label class="labels">Full Name</label><input ngModel #fullname type="text" id="fullname" name="fullname" class="form-control" placeholder="Full Name" value={{this.currentUser.fullname}}/></div>
-                  <div class="col-md-12"><label class="labels">Phone Number</label><input #phone ngModel type="text" id="phone" name="phone" class="form-control" placeholder="Phone Number" value={{this.currentUser.phone}}/></div>
-                  <div class="col-md-12"><label class="labels">Email</label><input #email title="." type="email" id="email" name="email" class="form-control disabled" value={{this.currentUser.email}}></div>
+                  <div class="col-md-12"><label class="labels">Full Name</label><input #fullname type="text" id="fullname" name="fullname" class="form-control disabled" placeholder="Full Name" value={{this.currentUser.fullname}}/></div>
+                  <div class="col-md-12"><label class="labels">Phone Number</label><input  #phone type="text" id="phone" name="phone" class="form-control disabled" placeholder="Phone Number" value={{this.currentUser.phone}}/></div>
+                  <div class="col-md-12"><label class="labels">Email</label><input  #email title="." type="email" id="email" name="email" class="form-control disabled" value={{this.currentUser.email}}></div>
               </div>
               <div class="row mt-3">
-                  <div class="col-md-6"><label class="labels">Country</label><input #country ngModel type="text" class="form-control" id="country" name="country" placeholder="Country" value={{this.currentUser.country}}/></div>
-                  <div class="col-md-6"><label class="labels">City/State</label><input #city ngModel type="text" class="form-control" id="city" name="city" placeholder="City / State" value={{this.currentUser.city}}/></div>
+                  <div class="col-md-6"><label class="labels">Country</label><input #country type="text" class="form-control disabled" id="country" name="country" placeholder="Country" value={{this.currentUser.country}}/></div>
+                  <div class="col-md-6"><label class="labels">City/State</label><input #city type="text" class="form-control disabled" id="city" name="city" placeholder="City / State" value={{this.currentUser.city}}/></div>
               </div>
               <div class="mt-5 text-center"><button class="btn btn-primary " type="submit">Save Profile</button></div>
               <div class="mt-5 text-center"><button class="btn btn-danger delete-button" type="button"   (click)="this.deleteme()">Delete Account</button></div>

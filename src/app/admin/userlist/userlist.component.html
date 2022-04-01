@@ -17,7 +17,7 @@
                           <span class="fs-20 pr-16">{{user[1].fullname}} - {{user[1].rank}}</span>
                       </div>
                       <small class="fs-16 fw-300 ls-1">{{user[1].email}}</small>
-                      
+
                   </div>
                   <div class="media-right text-right d-none d-md-block">
                       <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> {{user[1].city}}, {{user[1].country}}</p>
@@ -30,7 +30,7 @@
                       <span>{{user[1].SignedIn}}</span>
                   </div>
                   <div class="card-hover-show">
-                      <a class="btn btn-xs fs-10 btn-bold btn-info text-white font-weight-bold" [routerLink]="['/edit',user[0]]">Edit</a>
+                      <a class="btn btn-xs fs-10 btn-bold btn-info text-white font-weight-bold" [routerLink]="['/edit',user[0]]">View</a>
                       <a class="btn btn-xs fs-10 btn-bold btn-warning text-white font-weight-bold" (click)="deleteUser(user[0])">Delete</a>
                   </div>
               </footer>

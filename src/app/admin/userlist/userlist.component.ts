@@ -1,3 +1,5 @@
+import { AdminGuard } from './../../services/admin.guard';
+import { AuthGuard } from './../../services/auth.guard';
 import { Router } from '@angular/router';
 import { SnackbarService } from './../../services/snackbar.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,10 +13,11 @@ import { getDatabase, onValue, ref, remove } from 'firebase/database';
 })
 export class UserlistComponent implements OnInit {
 
-  constructor(public sbservice: SnackbarService, public router: Router) { }
+  constructor(public sbservice: SnackbarService, public router: Router, public aguard: AdminGuard) { }
   userslist:any = [];
 
   ngOnInit(): void {
+    this.aguard.Admin = true;
     const db = getDatabase();
     const Ref = ref(db, 'users/');
     onValue(Ref, (snapshot) => {

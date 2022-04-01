@@ -99,7 +99,7 @@ export class AuthService {
       fullname: value.fullname,
       email: this.loadUseremail(),
       photo: this.loadUserphoto(),
-      rank: 'member',
+      rank: this.loadUserrank(),
       country: value.country,
       city: value.city,
       phone: value.phone,
@@ -187,6 +187,16 @@ loadUserSignedIn():string{
     SignedIn = snapshot.val();
   });
   return SignedIn;
+}
+
+loadUserrank():string{
+  let rank= '';
+  const db = getDatabase();
+  const SignedInRef = ref(db, 'users/' + this.auth.currentUser?.uid + '/rank');
+  onValue(SignedInRef, (snapshot) => {
+    rank = snapshot.val();
+  });
+  return rank;
 }
 
 
