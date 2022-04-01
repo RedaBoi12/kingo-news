@@ -1,4 +1,43 @@
 <div class="nav-back">
    
   </div>
-<p>userlist works</p>
+  <br>
+  <div class="container">
+    <div class="col-md-12">
+      <div>
+        <div *ngFor="let user of this.userslist">
+        <!--CARD START-->
+          <div class="card b-1 hover-shadow mb-20">
+              <div class="media card-body">
+                  <div class="media-left pr-12">
+                      <img class="avatar avatar-xl no-radius" src={{user[1].photo}} alt="...">
+                  </div>
+                  <div class="media-body">
+                      <div class="mb-2">
+                          <span class="fs-20 pr-16">{{user[1].fullname}} - {{user[1].rank}}</span>
+                      </div>
+                      <small class="fs-16 fw-300 ls-1">{{user[1].email}}</small>
+                      
+                  </div>
+                  <div class="media-right text-right d-none d-md-block">
+                      <p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1"></i> {{user[1].city}}, {{user[1].country}}</p>
+                      <span class="text-fade"><i class="fa fa-phone pr-1"></i> {{user[1].phone}}</span>
+                  </div>
+              </div>
+              <footer class="card-footer flexbox align-items-center">
+                  <div>
+                      <strong>Created at: </strong>
+                      <span>{{user[1].SignedIn}}</span>
+                  </div>
+                  <div class="card-hover-show">
+                      <a class="btn btn-xs fs-10 btn-bold btn-info text-white font-weight-bold" [routerLink]="['/edit',user[0]]">Edit</a>
+                      <a class="btn btn-xs fs-10 btn-bold btn-warning text-white font-weight-bold" (click)="deleteUser(user[0])">Delete</a>
+                  </div>
+              </footer>
+          </div>
+          <!--CARD END-->    
+        </div>   
+      </div>
+
+    </div>
+  </div>
