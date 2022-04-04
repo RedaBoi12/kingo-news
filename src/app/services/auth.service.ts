@@ -35,9 +35,9 @@ export class AuthService {
                 email: user.email,
                 photo: user.photoURL,
                 rank: 'Member',
-                country: null,
-                city: null,
-                phone: null,
+                country: 'null',
+                city: 'null',
+                phone: 'null',
                 SignedIn: Date()
               })               
          
@@ -149,11 +149,7 @@ export class AuthService {
 
 
 
-
-
-
-
-
+  
 
 
 
@@ -166,13 +162,6 @@ export class AuthService {
     this.guard.isLogged = false;
     this.router.navigate(['']);
   }
-
-
-
-
-
-
-
 
 
 
