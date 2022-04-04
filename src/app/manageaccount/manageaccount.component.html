@@ -3,7 +3,14 @@
     <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img title="." class="rounded-circle mt-5" src={{this.auth.loadUserphoto()}} width="90"><span class="font-weight-bold">{{this.auth.loadUserfullname()}}</span><span class="text-black-50">{{this.auth.loadUseremail()}}</span><span>- Created at: {{this.auth.loadUserSignedIn()}} -</span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                <img    title="." 
+                        class="rounded-circle mt-5" 
+                        src={{this.auth.loadUserphoto()}} 
+                        width="90">
+                <span class="font-weight-bold">{{this.auth.loadUserfullname()}}</span>
+                <span class="text-black-50">{{this.auth.loadUseremail()}}</span>
+                <span>- Created at: {{this.auth.loadUserSignedIn()}} -</span></div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
@@ -13,9 +20,18 @@
                 <form #UserForm="ngForm" (ngSubmit)="this.auth.modifyUser(UserForm.value)">
                 <div class="row mt-2">
                     
-                    <div class="col-md-12"><label class="labels">Full Name</label><input ngModel type="text" id="fullname" name="fullname" class="form-control" placeholder="Full Name" value={{this.auth.loadUserfullname()}}/></div>
-                    <div class="col-md-12"><label class="labels">Phone Number</label><input ngModel type="text" id="phone" name="phone" class="form-control" placeholder="Phone Number" value={{this.auth.loadUserphone()}}/></div>
-                    <div class="col-md-12"><label class="labels">Email</label><input title="." type="email" id="email" name="email" class="form-control disabled" value={{this.auth.loadUseremail()}}></div>
+                    <div class="col-md-12">
+                        <label class="labels">Full Name</label>
+                        <input ngModel type="text" id="fullname" name="fullname" class="form-control" placeholder="Full Name" value={{this.auth.loadUserfullname()}}/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="labels">Phone Number</label>
+                        <input ngModel type="text" id="phone" name="phone" class="form-control" placeholder="Phone Number" value={{this.auth.loadUserphone()}}/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="labels">Email</label>
+                        <input title="." type="email" id="email" name="email" class="form-control disabled" value={{this.auth.loadUseremail()}}>
+                    </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-md-6"><label class="labels">Country</label><input ngModel type="text" class="form-control" id="country" name="country" placeholder="Country" value={{this.auth.loadUsercountry()}}/></div>
