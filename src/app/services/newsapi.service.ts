@@ -27,10 +27,10 @@ export class NewsapiService {
     return this.http.get('https://newsapi.org/v2/top-headlines?category=entertainment&apiKey=39475f49ed284e34950771680db422c2');
   }
   healthNews():Observable<any>{
-    return this.http.get('https://newsapi.org/v2/top-headlines?category=health&&apiKey=39475f49ed284e34950771680db422c2');
+    return this.http.get('https://newsapi.org/v2/top-headlines?category=health&apiKey=39475f49ed284e34950771680db422c2');
   }
   sportsNews():Observable<any>{
-    return this.http.get('https://newsapi.org/v2/top-headlines?category=sports&&apiKey=39475f49ed284e34950771680db422c2');
+    return this.http.get('https://newsapi.org/v2/top-headlines?category=sports&apiKey=39475f49ed284e34950771680db422c2');
   }
 
 
