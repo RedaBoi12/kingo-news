@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { getDatabase, ref, set } from 'firebase/database';
 import { NewsapiService } from 'src/app/services/newsapi.service';
 
 @Component({
@@ -15,6 +16,14 @@ export class HealthnewsComponent implements OnInit {
       console.log(result);
       this.healthNewsResult = result.articles;
     })
+  }
+
+  addArticle(title:string){
+    const db = getDatabase();
+    set(ref(db, 'articles/' + title), {
+      title: title,
+      likeCount: 0
+    });
   }
 
 }

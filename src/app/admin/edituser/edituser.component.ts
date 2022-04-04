@@ -1,3 +1,4 @@
+import { FormGroup, FormControl } from '@angular/forms';
 import { AdminGuard } from './../../services/admin.guard';
 import { SnackbarService } from './../../services/snackbar.service';
 import { AuthService } from './../../services/auth.service';
@@ -15,6 +16,15 @@ export class EdituserComponent implements OnInit {
 
   constructor(public aroute: ActivatedRoute, public auth: AuthService, public router: Router, public snack: SnackbarService, public aguard: AdminGuard) { }
   currentUser:any = [];
+  editGroup = new FormGroup({
+    fullname: new FormControl(),
+    phone: new FormControl(),
+    email: new FormControl(),
+    country: new FormControl(),
+    city: new FormControl(),
+  });
+
+
   ngOnInit(): void {
     const db = getDatabase();
     const uid = this.aroute.snapshot.params['uid'];

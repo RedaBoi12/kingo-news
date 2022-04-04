@@ -52,6 +52,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { NewstellerComponent } from './newsteller/newsteller.component';
 import { SearchComponent } from './categories/search/search.component';
 import { AdminComponent } from './admin/admin/admin.component';
+import { ReactiveFormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -103,6 +104,7 @@ import { AdminComponent } from './admin/admin/admin.component';
     MdbValidationModule,
     MatSnackBarModule,
     FormsModule,
+    ReactiveFormsModule,
     MatSelectModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCT9oQsOdGU-cjoa4UUWnNBxB4z0JCjjSg",

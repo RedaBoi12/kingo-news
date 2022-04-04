@@ -22,7 +22,6 @@ export class UserlistComponent implements OnInit {
     const Ref = ref(db, 'users/');
     onValue(Ref, (snapshot) => {
     const data = snapshot.val();
-    console.log(Object.entries(data));
     this.userslist = Object.entries(data);
   });
   }
@@ -33,4 +32,5 @@ export class UserlistComponent implements OnInit {
       this.sbservice.openSnackBar('User Deleted','Horray!');
     }
   }
+
 }

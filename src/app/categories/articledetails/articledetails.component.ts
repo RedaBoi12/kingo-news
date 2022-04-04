@@ -1,5 +1,4 @@
 import { ActivatedRoute } from '@angular/router';
-import { GlobalConstants } from './../../../global';
 import { Article } from './../../article';
 import { NewsapiService } from 'src/app/services/newsapi.service';
 import { Component, OnInit } from '@angular/core';
@@ -17,7 +16,8 @@ export class ArticledetailsComponent implements OnInit {
     content: '',
     description: '',
     publishedAt: '',
-    url: ''
+    url: '',
+    likeCount: 0
   };
   constructor(public news: NewsapiService, private aroute: ActivatedRoute) { 
   }
@@ -30,5 +30,4 @@ export class ArticledetailsComponent implements OnInit {
     this.article.publishedAt = this.aroute.snapshot.params['publishedAt'];
     this.article.url = this.aroute.snapshot.params['url'];
   }
-
 }
