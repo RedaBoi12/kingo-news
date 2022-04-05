@@ -21,7 +21,6 @@ export class HeaderComponent implements OnInit {
   }
 
   submitevent(e:any, value:string){
-    console.log(value);
     if (e.key === "Enter") {
       this.SubmitSearch(value);
     }

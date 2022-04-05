@@ -12,7 +12,6 @@ export class EntertainementnewsComponent implements OnInit {
   entertainementNewsResult:any = [];
   ngOnInit(): void {
     this.entertainementnews.entertainmentNews().subscribe((result)=>{
-      console.log(result);
       this.entertainementNewsResult = result.articles;
     })
   }

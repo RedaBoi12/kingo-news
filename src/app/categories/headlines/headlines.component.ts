@@ -18,10 +18,5 @@ export class HeadlinesComponent implements OnInit {
   }
 
 
-/*   saveArticle(title:string){
-    console.log(GlobalConstants.HoveredArticle);
-    GlobalConstants.HoveredArticle.title = title;
-    console.log(GlobalConstants.HoveredArticle);
-  } */
 
 }
