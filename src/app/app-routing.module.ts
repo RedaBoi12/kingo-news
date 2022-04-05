@@ -44,9 +44,9 @@ const routes: Routes = [
     {path: 'manage', component: ManageaccountComponent, canActivate: [AuthGuard]},
     {path: 'search', component: SearchComponent},
     {path: 'search/:search', component: SearchComponent},
-    {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
-    {path: 'adminpanel', component: UserlistComponent, canActivate: [AuthGuard]},
-    {path: 'edit/:uid', component: EdituserComponent},
+    {path: 'admin', component: AdminComponent, canActivate: [AdminGuard, AuthGuard]},
+    {path: 'adminpanel', component: UserlistComponent, canActivate: [AdminGuard, AuthGuard]},
+    {path: 'edit/:uid', component: EdituserComponent, canActivate: [AdminGuard, AuthGuard]},
 
 
 

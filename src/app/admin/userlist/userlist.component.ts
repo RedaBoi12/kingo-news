@@ -17,7 +17,6 @@ export class UserlistComponent implements OnInit {
   userslist:any = [];
 
   ngOnInit(): void {
-    this.aguard.Admin = true;
     const db = getDatabase();
     const Ref = ref(db, 'users/');
     onValue(Ref, (snapshot) => {
