@@ -8,12 +8,4 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
   title = 'moroccan-news';
-  constructor(public guard: AuthGuard){}
-
-  ngOnInit(): void {
-    if(this.guard.isLogged()){
-      this.guard.isLoggedin = true;
-    }
-    else this.guard.isLoggedin = false;
-  }
 }

@@ -6,7 +6,6 @@ import {Auth, GoogleAuthProvider, signInWithPopup, signOut} from '@angular/fire/
 import { ref, set, getDatabase, onValue, remove} from 'firebase/database';
 import { Router} from '@angular/router';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -43,7 +42,7 @@ export class AuthService {
               })               
          
         this.snack.openSnackBar(`${user.email} Signed Up`,'Horray!');
-        this.guard.isLoggedin = true;
+        this.guard.isLogged = true;
 
       }).catch((error) => {
         const errorCode = error.code;
@@ -51,7 +50,7 @@ export class AuthService {
         const email = error.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
         this.snack.openSnackBar(`${email} Couldnt Sign Up :(`,'Oops!');
-        this.guard.isLoggedin = false;
+        this.guard.isLogged = false;
         console.log(errorCode+' / '+errorMessage);
       });
   }
@@ -70,13 +69,13 @@ export class AuthService {
     const provider = new GoogleAuthProvider();
     const database = getDatabase();
     provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
-    return signInWithPopup(this.auth, provider)
+    signInWithPopup(this.auth, provider)
       .then((result) => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential!.accessToken;  
         const user = result.user;
         this.snack.openSnackBar(`${user.email} Logged In`,'Horray!');
-        this.guard.isLoggedin = true;
+        this.guard.isLogged = true;
         const refr =  ref(database, 'users/' + this.auth.currentUser?.uid + '/rank');
         onValue(refr, (snapshot) => {
           const data = snapshot.val();
@@ -90,10 +89,9 @@ export class AuthService {
         const email = error.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
         this.snack.openSnackBar(`${email} Couldnt Log In :(`,'Oops!');
-        this.guard.isLoggedin = false;
+        this.guard.isLogged = false;
         console.log(errorCode+' / '+errorMessage);
-      });      
-
+      });
   }
 
 
@@ -108,7 +106,7 @@ export class AuthService {
   signout(){
     this.snack.openSnackBar(`${this.auth.currentUser?.email} Logged Out!`,'Horray!');
     signOut(this.auth).then(() => {
-      this.guard.isLoggedin = false;
+      this.guard.isLogged = false;
       this.admin.Admin = false;
       this.router.navigate(['']);
     }).catch((error) => {
@@ -161,7 +159,7 @@ export class AuthService {
   deleteUser(){
     const db = getDatabase();
     remove(ref(db, 'users/' + this.auth.currentUser?.uid));
-    this.guard.isLoggedin = false;
+    this.guard.isLogged = false;
     this.router.navigate(['']);
   }
 
