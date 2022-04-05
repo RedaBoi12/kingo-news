@@ -12,7 +12,6 @@ export class TechnewsComponent implements OnInit {
   techNewsResult:any = [];
   ngOnInit(): void {
     this.technews.techNews().subscribe((result)=>{
-      console.log(result);
       this.techNewsResult = result.articles;
     })
   }

@@ -18,7 +18,6 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     const value = this.aroute.snapshot.params['search'];
     this.searchNews(value).subscribe((result)=>{
-      console.log(result);
       this.searchResult = result.articles;
     })
   }

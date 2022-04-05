@@ -12,7 +12,6 @@ export class SciencenewsComponent implements OnInit {
   scienceNewsResult:any = [];
   ngOnInit(): void {
     this.sciencenews.scienceNews().subscribe((result)=>{
-      console.log(result);
       this.scienceNewsResult = result.articles;
     })
   }

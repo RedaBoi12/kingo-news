@@ -12,7 +12,6 @@ export class SportsnewsComponent implements OnInit {
   sportsNewsResult:any = [];
   ngOnInit(): void {
     this.sportsnews.sportsNews().subscribe((result)=>{
-      console.log(result);
       this.sportsNewsResult = result.articles;
     })
   }

@@ -13,7 +13,6 @@ export class HeadlinesComponent implements OnInit {
   topHeadlinesResult:any = [];
   ngOnInit(): void {
     this.news.topHeadlines().subscribe((result)=>{
-      console.log(result);
       this.topHeadlinesResult = result.articles;
     })
   }

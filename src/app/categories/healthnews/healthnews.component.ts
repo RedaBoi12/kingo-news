@@ -13,7 +13,6 @@ export class HealthnewsComponent implements OnInit {
   healthNewsResult:any = [];
   ngOnInit(): void {
     this.healthnews.healthNews().subscribe((result)=>{
-      console.log(result);
       this.healthNewsResult = result.articles;
     })
   }
