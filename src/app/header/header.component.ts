@@ -25,4 +25,9 @@ export class HeaderComponent implements OnInit {
       this.SubmitSearch(value);
     }
   }
+
+  checkmail():boolean{
+    if(this.auth.auth.currentUser?.email == null) return false;
+    else return true;
+  }
 }

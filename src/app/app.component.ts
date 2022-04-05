@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { AuthGuard } from './services/auth.guard';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'moroccan-news';
+  constructor(public guard: AuthGuard){}
+
+  ngOnInit(): void {
+    if(this.guard.isLogged()){
+      this.guard.isLoggedin = true;
+    }
+    else this.guard.isLoggedin = false;
+  }
 }

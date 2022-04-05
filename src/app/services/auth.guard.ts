@@ -9,9 +9,14 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Rout
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  isLogged: boolean = false;
   constructor(private afAuth: Auth, public sbService: SnackbarService, public router: Router){
     
+  }
+  isLoggedin: boolean = false;
+
+  isLogged():boolean{
+    if(this.afAuth.currentUser?.email == null) return false;
+    else return true
   }
   async canActivate(
     route: ActivatedRouteSnapshot,
@@ -20,9 +25,10 @@ export class AuthGuard implements CanActivate {
     const isAuthentificated = user ? true : false;
     if (!isAuthentificated){
       this.router.navigate(['']);
-      this.isLogged = false;
+      this.isLoggedin = false;
       this.sbService.openSnackBar(`Please Login/Register to view this Page`, '');
     }
+    else this.isLoggedin = true;
     return isAuthentificated;
 
   }
