@@ -1,4 +1,3 @@
-import { AdminGuard } from './../../services/admin.guard';
 import { SnackbarService } from './../../services/snackbar.service';
 import { AuthGuard } from './../../services/auth.guard';
 import { Router } from '@angular/router';
@@ -12,7 +11,7 @@ import { getDatabase, onValue, ref } from 'firebase/database';
 })
 export class AdminComponent implements OnInit {
 
-  constructor(public router: Router, public guard: AuthGuard, public sb: SnackbarService, public aguard: AdminGuard) { }
+  constructor(public router: Router, public guard: AuthGuard, public sb: SnackbarService) { }
 
   admincode:string='';
 

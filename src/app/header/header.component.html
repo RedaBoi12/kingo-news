@@ -13,9 +13,9 @@
         </div>
         <div class="col-12 col-md-10 d-none d-xl-block">
           <nav class="site-navigation position-relative text-right" role="navigation">
-            <div *ngIf="this.checkmail(); then thenBlock else elseBlock"></div>
+            <div *ngIf="this.auth.checkmail(); then thenBlock else elseBlock"></div>
             <ng-template #thenBlock>
-              <div *ngIf="this.admin.Admin; then adminBlock else userBlock"></div>
+              <div *ngIf="this.auth.checkAdmin(); then adminBlock else userBlock"></div>
               <ng-template #userBlock>
                 <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
                   <li class="has-children">

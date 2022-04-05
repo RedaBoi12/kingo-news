@@ -1,11 +1,8 @@
 import { EdituserComponent } from './admin/edituser/edituser.component';
-import { AdminGuard } from './services/admin.guard';
 import { UserlistComponent } from './admin/userlist/userlist.component';
 import { AdminComponent } from './admin/admin/admin.component';
 import { SearchComponent } from './categories/search/search.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { child } from 'firebase/database';
-import { NewsapiService } from './services/newsapi.service';
 import { FaqComponent } from './faq/faq.component';
 import { IndexpageComponent } from './indexpage/indexpage.component';
 import { ArticledetailsComponent } from './categories/articledetails/articledetails.component';
@@ -17,11 +14,10 @@ import { HealthnewsComponent } from './categories/healthnews/healthnews.componen
 import { SciencenewsComponent } from './categories/sciencenews/sciencenews.component';
 import { BusinessnewsComponent } from './categories/businessnews/businessnews.component';
 import { EntertainementnewsComponent } from './categories/entertainementnews/entertainementnews.component';
-import { AppComponent } from './app.component';
 import { TechnewsComponent } from './categories/technews/technews.component';
 import { HeadlinesComponent } from './categories/headlines/headlines.component';
-import { NgModule, Component } from '@angular/core';
-import { RouterModule, Routes, CanActivate } from '@angular/router';
+import { NgModule} from '@angular/core';
+import { RouterModule, Routes} from '@angular/router';
 
 const routes: Routes = [
     {path: '', component: IndexpageComponent, pathMatch:'full'},
@@ -44,9 +40,9 @@ const routes: Routes = [
     {path: 'manage', component: ManageaccountComponent, canActivate: [AuthGuard]},
     {path: 'search', component: SearchComponent},
     {path: 'search/:search', component: SearchComponent},
-    {path: 'admin', component: AdminComponent, canActivate: [AdminGuard, AuthGuard]},
-    {path: 'adminpanel', component: UserlistComponent, canActivate: [AdminGuard, AuthGuard]},
-    {path: 'edit/:uid', component: EdituserComponent, canActivate: [AdminGuard, AuthGuard]},
+    {path: 'admin', component: AdminComponent, canActivate: [AuthGuard]},
+    {path: 'adminpanel', component: UserlistComponent},
+    {path: 'edit/:uid', component: EdituserComponent},
 
 
 

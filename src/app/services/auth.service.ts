@@ -1,4 +1,3 @@
-import { AdminGuard } from './admin.guard';
 import { AuthGuard } from './auth.guard';
 import { SnackbarService } from './snackbar.service';
 import { Injectable } from '@angular/core';
@@ -11,7 +10,7 @@ import { Router} from '@angular/router';
 })
 export class AuthService {
 
-  constructor(public auth: Auth, public guard: AuthGuard, public snack: SnackbarService, private router: Router, public admin: AdminGuard) { }
+  constructor(public auth: Auth, public guard: AuthGuard, public snack: SnackbarService, private router: Router) { }
 
 
 
@@ -79,8 +78,6 @@ export class AuthService {
         const refr =  ref(database, 'users/' + this.auth.currentUser?.uid + '/rank');
         onValue(refr, (snapshot) => {
           const data = snapshot.val();
-          if(data == 'admin') this.admin.Admin = true;
-          else this.admin.Admin = false;
         });
 
       }).catch((error) => {
@@ -107,7 +104,6 @@ export class AuthService {
     this.snack.openSnackBar(`${this.auth.currentUser?.email} Logged Out!`,'Horray!');
     signOut(this.auth).then(() => {
       this.guard.isLogged = false;
-      this.admin.Admin = false;
       this.router.navigate(['']);
     }).catch((error) => {
       this.snack.openSnackBar(`${error.message}`,'Oops!');
@@ -254,4 +250,21 @@ export class AuthService {
 /////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////
 
+checkmail():boolean{
+  if(this.auth.currentUser?.email == null) return false;
+  else return true;
+}
+
+checkAdmin():boolean{
+  const db = getDatabase();
+  let adminback!:boolean;
+
+
+  const Ref = ref(db, 'users/' + this.auth.currentUser?.uid + '/rank');
+  onValue(Ref, (snapshot) => {
+    if(snapshot.val() == 'Member') adminback = false;
+    else adminback = true;
+  });
+  return adminback;
+}
 }

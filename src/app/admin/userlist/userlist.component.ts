@@ -1,9 +1,6 @@
-import { AdminGuard } from './../../services/admin.guard';
-import { AuthGuard } from './../../services/auth.guard';
 import { Router } from '@angular/router';
 import { SnackbarService } from './../../services/snackbar.service';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../user';
 import { getDatabase, onValue, ref, remove } from 'firebase/database';
 
 @Component({
@@ -13,7 +10,7 @@ import { getDatabase, onValue, ref, remove } from 'firebase/database';
 })
 export class UserlistComponent implements OnInit {
 
-  constructor(public sbservice: SnackbarService, public router: Router, public aguard: AdminGuard) { }
+  constructor(public sbservice: SnackbarService, public router: Router) { }
   userslist:any = [];
 
   ngOnInit(): void {

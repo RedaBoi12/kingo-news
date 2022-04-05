@@ -1,5 +1,4 @@
 import { FormGroup, FormControl } from '@angular/forms';
-import { AdminGuard } from './../../services/admin.guard';
 import { SnackbarService } from './../../services/snackbar.service';
 import { AuthService } from './../../services/auth.service';
 import { User } from '../../user';
@@ -14,7 +13,7 @@ import { getDatabase, onValue, ref, remove, set } from 'firebase/database';
 })
 export class EdituserComponent implements OnInit {
 
-  constructor(public aroute: ActivatedRoute, public auth: AuthService, public router: Router, public snack: SnackbarService, public aguard: AdminGuard) { }
+  constructor(public aroute: ActivatedRoute, public auth: AuthService, public router: Router, public snack: SnackbarService) { }
   currentUser:any = [];
   editGroup = new FormGroup({
     fullname: new FormControl(),
@@ -62,8 +61,5 @@ export class EdituserComponent implements OnInit {
   }
 
 
-  adminOn(){
-    this.aguard.Admin = true;
-  }
 
 }
