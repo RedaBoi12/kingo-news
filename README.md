@@ -65,9 +65,9 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 
 ## Tech
 
-**Client:** Angular, Bootstrap, Firebase
+**Front-End:** Angular, Bootstrap, Firebase
 
-**API:** NewsAPI, FormSubmit
+**Back-End:** NewsAPI, FormSubmit
 
 <br><br><br><br><br><br><br><br>
 
