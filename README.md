@@ -236,7 +236,7 @@ Si vous avez des commentaires, veuillez me contacter à redabusiness10@gmail.com
 ## 🚀 A propos du createur
 
 Bonjour, je m'appelle [ElGoumri Reda](https://www.github.com/RedaBoi12), et je suis le créateur du site Web  
-"The King of News (King'o News)", c'est mon premier projet angulaire et  
+"The King of News (King'o News)", c'est mon premier projet angular et  
 est principalement destiné à m'aider à apprendre et à comprendre le framework  
 autant que possible .
 
