@@ -19,6 +19,8 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 - manipulation complète du NewsAPI
 
 
+
+
 ## Screenshots
 
 ![1](src/assets/screenshots/1.png)
@@ -33,11 +35,13 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 
 
 
+
 ## Tech
 
 **Client:** Angular, Bootstrap, Firebase
 
 **API:** NewsAPI, FormSubmit
+
 
 
 
@@ -72,6 +76,10 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 | `q`      | `string` | Keywords or phrases to search for in the article title and body. |
 
 
+
+
+
+
 ## Référence des Couleurs
 
 | Color             | Hex                                                                |
@@ -80,6 +88,9 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 | Danger | ![#f93154](https://via.placeholder.com/10/f93154?text=+) #f93154 |
 | Primary | ![#1266f1](https://via.placeholder.com/10/1266f1?text=+) #1266f1 |
 | Warning | ![#ffa900](https://via.placeholder.com/10/ffa900?text=+) #ffa900 |
+
+
+
 
 
 ## Exécuter Localement
@@ -110,10 +121,25 @@ Démarrer le serveur d'Angular CLI
 
 
 
+
+
 ## Bibliothèques NPM
 
 - Angular CLI
-- 
+- Angular Material
+- Angular Fire
+- Bootstrap MD
+- Bootstrap
+- Firebase
+- Firebase Tools
+- FortAwesome
+- rxjs
+
+
+
+
+
+
 ## FAQ
 
 #### Combien de temps ce projet vous a-t-il pris ?
@@ -132,6 +158,10 @@ et j'ai trouvé l'API News qui m'a évité de rechercher et de télécharger per
 d'actualité et de les enregistrer localement
 
 
+
+
+
+
 ## Roadmap
 
 - Additional browser support
@@ -143,14 +173,26 @@ d'actualité et de les enregistrer localement
 - Abonnements payants
 
 
+
+
+
+
 ## Feedback
 
 Si vous avez des commentaires, veuillez me contacter à redabusiness10@gmail.com
 
 
+
+
+
+
 ## Créateur
 
 - [@ElGoumri Reda](https://www.github.com/RedaBoi12)
+
+
+
+
 
 
 ## Gestion des Versions
@@ -168,12 +210,19 @@ Si vous avez des commentaires, veuillez me contacter à redabusiness10@gmail.com
     - Ajout d'un panneau d'administration auquel seuls les utilisateurs ayant un rang d'administrateur ont accès
     - Ajout du CRUD des utilisateurs complets dans le panneau d'administration
     - Passé à la version 1.0 car d'autres mises à jour mineures ont été ajoutées et jamais mentionnées
+    
+    
+    
+    
 ## 🚀 A propos du createur
 
 Bonjour, je m'appelle ElGoumri Reda, et je suis le créateur du site Web  
 "The King of News (King'o News)", c'est mon premier projet angulaire et  
 est principalement destiné à m'aider à apprendre et à comprendre le framework  
 autant que possible .
+
+
+
 
 
 ## 🛠 Compétences
