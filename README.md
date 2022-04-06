@@ -37,7 +37,8 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 - Page de gestion de compte, il s'agit de la page vers laquelle un utilisateur enregistré est redirigé en cliquant sur l'option "Manage Account", elle contient une fonction R.U.D qui affiche les détails de l'utilisateur et lui donne la possibilité de le modifier ou de supprimer son compte.
 ![7](src/assets/screenshots/7.png)
 
-- L'utilisateur est ensuite stocké sur la Firebase Realtime Database et chaque fois que l'utilisateur fait une demande de modification à partir de la page "Manage Account", les détails de l'utilisateur sont également modifiés du côté de la base de données.
+- L'utilisateur est ensuite stocké sur la Firebase Realtime Database et chaque fois que l'utilisateur fait une demande de modification à partir de la page "Manage Account", les détails de l'utilisateur sont également modifiés du côté de la base de données.  
+
 ![10](src/assets/screenshots/10.png)  
 
 ![11](src/assets/screenshots/11.png)
