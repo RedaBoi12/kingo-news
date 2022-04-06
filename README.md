@@ -82,7 +82,7 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Ton Key API |
+| `api_key` | `string` | **Required**. your API Key |
 | `PAYS` | `string` | The 2-letter ISO 3166-1 code of the country you want to get headlines for. Note: you can't mix this param with the sources param. |
 | `category` | `string` | The category you want to get headlines for. Note: you can't mix this param with the sources param.|
 |  | | Possible options: business, entertainment, general, health, science, sports, technology.   |
@@ -99,7 +99,7 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `api_key` | `string` | **Required**. Ton Key API |
+| `api_key` | `string` | **Required**. your API Key |
 | `q`      | `string` | Keywords or phrases to search for in the article title and body. |
 
 
