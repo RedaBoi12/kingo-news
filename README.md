@@ -2,10 +2,11 @@
 ![Logo](src/assets/screenshots/logo.png)
 
 
-# King'o News
+# King'o News  
+    
 
 Lisez tous les articles récents sur les drames et les actualités de votre choix via NewsAPI
-
+<br><br><br><br><br><br><br><br>
 
 ## Features
 
@@ -19,30 +20,59 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 - manipulation complète du NewsAPI
 
 
-
+<br><br><br><br><br><br><br><br>
 
 ## Screenshots
 
+- Page d'index avant la connexion, il s'agit de la première page qu'un utilisateur verra en visitant le site Web, elle contient un en-tête interactif et une affiche
 ![1](src/assets/screenshots/1.png)
-![2](src/assets/screenshots/2.png)
-![3](src/assets/screenshots/3.png)
-![4](src/assets/screenshots/4.png)
-![5](src/assets/screenshots/5.png)
+
+- Page d'index après connexion (utilisateur), cette page est très similaire à la page précédente mais elle contient de nouvelles fonctionnalités accessibles uniquement aux utilisateurs enregistrés.
+![9](src/assets/screenshots/9.png)
+
+- Page d'index après connexion (administrateur), cette page est très similaire à la page précédente mais elle contient des fonctionnalités administrateur.
 ![6](src/assets/screenshots/6.png)
+
+
+- Page de gestion de compte, il s'agit de la page vers laquelle un utilisateur enregistré est redirigé en cliquant sur l'option "Manage Account", elle contient une fonction R.U.D qui affiche les détails de l'utilisateur et lui donne la possibilité de le modifier ou de supprimer son compte.
 ![7](src/assets/screenshots/7.png)
+
+
+- Page des titres, il s'agit de la page vers laquelle l'utilisateur est redirigé en cliquant sur l'option "Trending News", il les redirige vers une page qui exécute un appel GET à l'API news et renvoie une liste des articles d'actualités en vogue à ce moment-là.
+
+    -L'utilisateur peut également filtrer la sortie en choisissant l'une des catégories répertoriées sous l'option, qui filtre ensuite l'appel GET pour ne renvoyer que les articles d'actualité de cette catégorie spécifique.
+
+![3](src/assets/screenshots/3.png)
+
+
+- Il s'agit de la page de détails de l'article, en sélectionnant l'un des articles de presse de la page précédente, l'utilisateur est redirigé vers une nouvelle page contenant des informations détaillées sur l'article.
+
+![4](src/assets/screenshots/4.png)
+
+
+- Page FAQ, cette page contient quelques questions qui nous sont souvent posées sur notre site Web, si vous avez une question différente, n'hésitez pas à visiter notre page "Contactez-nous" et à nous envoyer un message
+
+![5](src/assets/screenshots/5.png)
+
+
+- Page "Admin Panel", cette page n'est accessible qu'aux administrateurs, elle utilise l'intégration Firebase pour renvoyer une liste complète de tous les utilisateurs actuellement inscrits sur notre site Web, et donne la possibilité d'afficher et de modifier l'utilisateur, ou de le supprimer de la base de données .
+
 ![8](src/assets/screenshots/8.png)
 
 
 
 
+<br><br><br><br><br><br><br><br>
+
+
 
 ## Tech
 
-**Client:** Angular, Bootstrap, Firebase
+**Front-End:** Angular, Bootstrap
 
-**API:** NewsAPI, FormSubmit
+**Back-End:** NewsAPI, Firebase, FormSubmit
 
-
+<br><br><br><br><br><br><br><br>
 
 
 ## Référence API (NewsAPI)
@@ -55,7 +85,7 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Ton Key API |
+| `api_key` | `string` | **Required**. your API Key |
 | `PAYS` | `string` | The 2-letter ISO 3166-1 code of the country you want to get headlines for. Note: you can't mix this param with the sources param. |
 | `category` | `string` | The category you want to get headlines for. Note: you can't mix this param with the sources param.|
 |  | | Possible options: business, entertainment, general, health, science, sports, technology.   |
@@ -72,13 +102,13 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `api_key` | `string` | **Required**. Ton Key API |
+| `api_key` | `string` | **Required**. your API Key |
 | `q`      | `string` | Keywords or phrases to search for in the article title and body. |
 
 
 
 
-
+<br><br><br><br><br><br><br><br>
 
 ## Référence des Couleurs
 
@@ -89,7 +119,7 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 | Primary | ![#1266f1](https://via.placeholder.com/10/1266f1?text=+) #1266f1 |
 | Warning | ![#ffa900](https://via.placeholder.com/10/ffa900?text=+) #ffa900 |
 
-
+<br><br><br><br><br><br><br><br>
 
 
 
@@ -120,7 +150,7 @@ Démarrer le serveur d'Angular CLI
 ```
 
 
-
+<br><br><br><br><br><br><br><br>
 
 
 ## Bibliothèques NPM
@@ -137,7 +167,7 @@ Démarrer le serveur d'Angular CLI
 
 
 
-
+<br><br><br><br><br><br><br><br>
 
 
 ## FAQ
@@ -153,14 +183,14 @@ Veuillez vous référer à la section "Exécuter localement" pour afficher un gu
 #### Pourquoi avez-vous décidé de créer un site Web d'actualités comme premier projet ?
 
 
-j'ai toujours voulu créer un site Web d'actualités pour tester pleinement mon potentiel dans un cadre  
-et j'ai trouvé l'API News qui m'a évité de rechercher et de télécharger personnellement des articles  
-d'actualité et de les enregistrer localement
+j'ai toujours voulu créer un site Web d'actualités pour tester pleinement mon potentiel dans un framework  
+et j'ai trouvé l'API NewsApi qui m'a évité de rechercher et de télécharger personnellement des articles  
+d'actualité et de les enregistrer localement.
 
 
 
 
-
+<br><br><br><br><br><br><br><br>
 
 ## Roadmap
 
@@ -173,7 +203,7 @@ d'actualité et de les enregistrer localement
 - Abonnements payants
 
 
-
+<br><br><br><br><br><br><br><br>
 
 
 
@@ -185,15 +215,7 @@ Si vous avez des commentaires, veuillez me contacter à redabusiness10@gmail.com
 
 
 
-
-## Créateur
-
-- [@ElGoumri Reda](https://www.github.com/RedaBoi12)
-
-
-
-
-
+<br><br><br><br><br><br><br><br>
 
 ## Gestion des Versions
 
@@ -212,16 +234,16 @@ Si vous avez des commentaires, veuillez me contacter à redabusiness10@gmail.com
     - Passé à la version 1.0 car d'autres mises à jour mineures ont été ajoutées et jamais mentionnées
     
     
-    
+    <br><br><br><br><br><br><br><br>
     
 ## 🚀 A propos du createur
 
-Bonjour, je m'appelle ElGoumri Reda, et je suis le créateur du site Web  
-"The King of News (King'o News)", c'est mon premier projet angulaire et  
+Bonjour, je m'appelle [ElGoumri Reda](https://www.github.com/RedaBoi12), et je suis le créateur du site Web  
+"The King of News (King'o News)", c'est mon premier projet angular et  
 est principalement destiné à m'aider à apprendre et à comprendre le framework  
 autant que possible .
 
-
+<br><br><br><br><br><br><br><br>
 
 
 
@@ -230,7 +252,7 @@ HTML, CSS, jQuery ,Javascript, Typescript
 Frameworks: Bootstrap, Angular
 
 
-
+<br><br><br><br>
 
 ## Leçons apprises
 
