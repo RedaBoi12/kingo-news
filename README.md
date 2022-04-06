@@ -23,35 +23,38 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 
 ## Screenshots
 
+- Page d'index avant la connexion, il s'agit de la première page qu'un utilisateur verra en visitant le site Web, elle contient un en-tête interactif et une affiche
 ![1](src/assets/screenshots/1.png)
 
-- Page d'index avant la connexion, il s'agit de la première page qu'un utilisateur verra en visitant le site Web, elle contient un en-tête interactif et une affiche
-
+- Page d'index après connexion, cette page est très similaire à la page précédente mais elle contient de nouvelles fonctionnalités accessibles uniquement aux utilisateurs enregistrés.
 ![6](src/assets/screenshots/6.png)
 
-- Page d'index après connexion, cette page est très similaire à la page précédente mais elle contient de nouvelles fonctionnalités accessibles uniquement aux utilisateurs enregistrés.
-
-![7](src/assets/screenshots/7.png)
 
 - Page de gestion de compte, il s'agit de la page vers laquelle un utilisateur enregistré est redirigé en cliquant sur l'option "Manage Account", elle contient une fonction R.U.D qui affiche les détails de l'utilisateur et lui donne la possibilité de le modifier ou de supprimer son compte.
+![7](src/assets/screenshots/7.png)
 
-![3](src/assets/screenshots/3.png)
 
 - Page des titres, il s'agit de la page vers laquelle l'utilisateur est redirigé en cliquant sur l'option "Trending News", il les redirige vers une page qui exécute un appel GET à l'API news et renvoie une liste des articles d'actualités en vogue à ce moment-là.
 
     -L'utilisateur peut également filtrer la sortie en choisissant l'une des catégories répertoriées sous l'option, qui filtre ensuite l'appel GET pour ne renvoyer que les articles d'actualité de cette catégorie spécifique.
 
-![4](src/assets/screenshots/4.png)
+![3](src/assets/screenshots/3.png)
+
 
 - Il s'agit de la page de détails de l'article, en sélectionnant l'un des articles de presse de la page précédente, l'utilisateur est redirigé vers une nouvelle page contenant des informations détaillées sur l'article.
 
-![5](src/assets/screenshots/5.png)
+![4](src/assets/screenshots/4.png)
+
 
 - Page FAQ, cette page contient quelques questions qui nous sont souvent posées sur notre site Web, si vous avez une question différente, n'hésitez pas à visiter notre page "Contactez-nous" et à nous envoyer un message
 
-![8](src/assets/screenshots/8.png)
+![5](src/assets/screenshots/5.png)
+
 
 - Page "Admin Panel", cette page n'est accessible qu'aux administrateurs, elle utilise l'intégration Firebase pour renvoyer une liste complète de tous les utilisateurs actuellement inscrits sur notre site Web, et donne la possibilité d'afficher et de modifier l'utilisateur, ou de le supprimer de la base de données .
+
+![8](src/assets/screenshots/8.png)
+
 
 
 
