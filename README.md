@@ -27,7 +27,10 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 - Page d'index avant la connexion, il s'agit de la première page qu'un utilisateur verra en visitant le site Web, elle contient un en-tête interactif et une affiche
 ![1](src/assets/screenshots/1.png)
 
-- Page d'index après connexion, cette page est très similaire à la page précédente mais elle contient de nouvelles fonctionnalités accessibles uniquement aux utilisateurs enregistrés.
+- Page d'index après connexion (utilisateur), cette page est très similaire à la page précédente mais elle contient de nouvelles fonctionnalités accessibles uniquement aux utilisateurs enregistrés.
+![9](src/assets/screenshots/9.png)
+
+- Page d'index après connexion (administrateur), cette page est très similaire à la page précédente mais elle contient des fonctionnalités administrateur.
 ![6](src/assets/screenshots/6.png)
 
 
