@@ -3,7 +3,6 @@
 
 
 # King'o News  
-  <br>
     
 
 Lisez tous les articles récents sur les drames et les actualités de votre choix via NewsAPI
@@ -21,7 +20,7 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 - manipulation complète du NewsAPI
 
 
-
+<br><br><br><br>
 
 ## Screenshots
 
@@ -60,7 +59,7 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 
 
 
-
+<br><br><br><br>
 
 
 
@@ -70,7 +69,7 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 
 **API:** NewsAPI, FormSubmit
 
-
+<br><br><br><br>
 
 
 ## Référence API (NewsAPI)
@@ -106,7 +105,7 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 
 
 
-
+<br><br><br><br>
 
 ## Référence des Couleurs
 
@@ -117,7 +116,7 @@ Lisez tous les articles récents sur les drames et les actualités de votre choi
 | Primary | ![#1266f1](https://via.placeholder.com/10/1266f1?text=+) #1266f1 |
 | Warning | ![#ffa900](https://via.placeholder.com/10/ffa900?text=+) #ffa900 |
 
-
+<br><br><br><br>
 
 
 
@@ -148,7 +147,7 @@ Démarrer le serveur d'Angular CLI
 ```
 
 
-
+<br><br><br><br>
 
 
 ## Bibliothèques NPM
@@ -165,7 +164,7 @@ Démarrer le serveur d'Angular CLI
 
 
 
-
+<br><br><br><br>
 
 
 ## FAQ
@@ -188,7 +187,7 @@ d'actualité et de les enregistrer localement
 
 
 
-
+<br><br><br><br>
 
 ## Roadmap
 
@@ -201,7 +200,7 @@ d'actualité et de les enregistrer localement
 - Abonnements payants
 
 
-
+<br><br><br><br>
 
 
 
@@ -212,7 +211,7 @@ Si vous avez des commentaires, veuillez me contacter à redabusiness10@gmail.com
 
 
 
-
+<br><br><br><br>
 
 ## Créateur
 
@@ -221,7 +220,7 @@ Si vous avez des commentaires, veuillez me contacter à redabusiness10@gmail.com
 
 
 
-
+<br><br><br><br>
 
 ## Gestion des Versions
 
@@ -240,7 +239,7 @@ Si vous avez des commentaires, veuillez me contacter à redabusiness10@gmail.com
     - Passé à la version 1.0 car d'autres mises à jour mineures ont été ajoutées et jamais mentionnées
     
     
-    
+    <br><br><br><br>
     
 ## 🚀 A propos du createur
 
@@ -249,7 +248,7 @@ Bonjour, je m'appelle ElGoumri Reda, et je suis le créateur du site Web
 est principalement destiné à m'aider à apprendre et à comprendre le framework  
 autant que possible .
 
-
+<br><br><br><br>
 
 
 
@@ -258,7 +257,7 @@ HTML, CSS, jQuery ,Javascript, Typescript
 Frameworks: Bootstrap, Angular
 
 
-
+<br><br><br><br>
 
 ## Leçons apprises
 
