@@ -180,9 +180,9 @@ Veuillez vous référer à la section "Exécuter localement" pour afficher un gu
 #### Pourquoi avez-vous décidé de créer un site Web d'actualités comme premier projet ?
 
 
-j'ai toujours voulu créer un site Web d'actualités pour tester pleinement mon potentiel dans un cadre  
-et j'ai trouvé l'API News qui m'a évité de rechercher et de télécharger personnellement des articles  
-d'actualité et de les enregistrer localement
+j'ai toujours voulu créer un site Web d'actualités pour tester pleinement mon potentiel dans un framework  
+et j'ai trouvé l'API NewsApi qui m'a évité de rechercher et de télécharger personnellement des articles  
+d'actualité et de les enregistrer localement.
 
 
 
