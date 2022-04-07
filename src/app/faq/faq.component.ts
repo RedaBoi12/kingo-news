@@ -1,3 +1,4 @@
+import { DynamificationService } from './../services/dynamification.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dyn: DynamificationService) { }
 
   ngOnInit(): void {
+    this.dyn.readFAQList();
+    this.dyn.readWISGList();
   }
 
 }

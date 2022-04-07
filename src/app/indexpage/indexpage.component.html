@@ -10,31 +10,21 @@
           </div>
           <div class="col-md-6 p-5 align-self-center">
             <h5 class="text-uppercase mb-2"><strong>Kingo News (c)</strong> </h5>
-            <p class="text-muted">Our Goal is to offer the latest and spiciest news from our beloved country
+            <p class="text-muted">Our Goal is to offer the latest and spiciest news 
                 while maintaining total trust with our customers and confirming our sources
             </p>
             <ul class="list-unstyled font-small mt-5 mb-0">
+                <div *ngFor="let about of this.dyn.listABOUT">
+                <li>
+                  <p class="text-uppercase mb-2"><strong>{{about[1].title}}</strong></p>
+                  <p class="text-muted mb-4">{{about[1].text}}</p>
+                </li>
+                </div>
               <li>
-                <p class="text-uppercase mb-2"><strong>WE ARE TITANS IN THE BUSINESS</strong></p>
-                <p class="text-muted mb-4">Offering the news since 2013</p>
-              </li>
-              <li>
-                <p class="text-uppercase mb-2"><strong>OUR SOURCES ARE ALWAYS RIGHT</strong></p>
-                <p class="text-muted mb-4">Trusted and confirmed through all your stories</p>
-              </li>
-              <li>
-                <p class="text-uppercase mb-2"><strong>CHEAP AND RELIABLE</strong></p>
-                <p class="text-muted mb-4">1080P Interviews & 24/7 Support</p>
-              </li>
-              <li>
-                <p class="text-uppercase mb-2"><strong>ALWAYS HERE FOR YOU</strong></p>
-                <a routerLink="contact">Contact us Here</a>
-              </li>
-              <li>
-                <p class="text-uppercase mt-4 mb-2"><strong>Share</strong></p>
+                <p class="text-uppercase mt-4 mb-2"><strong>Share & Contact</strong></p>
                 <div class="d-flex justify-content-start">
                   <a title="." class="text-muted pr-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a title="." class="text-muted pr-3" href="#"><i class="fab fa-twitter"></i></a>
+                  <a routerLink="contact">Contact us Here</a>
                 </div>
               </li>
             </ul>
@@ -50,60 +40,25 @@
       <p class="text-center w-responsive mx-auto mb-5">Some words from some of our recent loyal customers
           Please contact them if you suspect they're of not good faith.</p>
       <div class="row text-center">
-        <div class="col-md-4 mb-4">
-          <div class="testimonial">
-            <div class="avatar mx-auto">
-              <img title="." src="../../assets/image.png" width="50%" class="rounded-circle z-depth-1 img-fluid">
-            </div>
-            <h4 class="font-weight-bold dark-grey-text mt-4">Hamza Maha</h4>
-            <h6 class="font-weight-bold blue-text my-3">Journalist</h6>
-            <p class="font-weight-normal dark-grey-text">
-              <i class="fas fa-quote-left pr-2"></i>Since i linked my gmail to kingo news's newsteller i've been recieving
-              constant update on my home country, which is really nice as a person living outside because of the pandemic.</p>
-            <div class="orange-text">
-              <i class="fas fa-star"> </i>
-              <i class="fas fa-star"> </i>
-              <i class="fas fa-star"> </i>
-              <i class="fas fa-star"> </i>
-              <i class="fas fa-star"> </i>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="testimonial">
-            <div class="avatar mx-auto">
-              <img title="." src="../../assets/image.png" width="60%" class="rounded-circle z-depth-1 img-fluid">
-            </div>
-            <h4 class="font-weight-bold dark-grey-text mt-4">Younes Bounzal</h4>
-            <h6 class="font-weight-bold blue-text my-3">Web Developer</h6>
-            <p class="font-weight-normal dark-grey-text">
-              <i class="fas fa-quote-left pr-2"></i>I was able to link kingo news's news api to my website
-              for testing purposes and it works like a charm, and the price was surprisingly affordable.</p>
-            <div class="orange-text">
-              <i class="fas fa-star"> </i>
-              <i class="fas fa-star"> </i>
-              <i class="fas fa-star"> </i>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="testimonial">
-            <div class="avatar mx-auto">
-              <img title="." src="../../assets/image.png" width="50%" class="rounded-circle z-depth-1 img-fluid">
-            </div>
-            <h4 class="font-weight-bold dark-grey-text mt-4">Aymen Nassih</h4>
-            <h6 class="font-weight-bold blue-text my-3">Photographer</h6>
-            <p class="font-weight-normal dark-grey-text">
-              <i class="fas fa-quote-left pr-2"></i>the source material from kingo news's
-            article photos are so beautiful and good to use in my collection, love it</p>
-            <div class="orange-text">
-              <i class="fas fa-star"> </i>
-              <i class="fas fa-star"> </i>
-              <i class="fas fa-star"> </i>
-              <i class="fas fa-star"> </i>
-            </div>
-          </div>
-        </div>
+        <div *ngFor="let testimonial of this.dyn.listTESTIMONIALS">
+
+
+                      <div class="col-md-4 mb-4">
+                        <div class="testimonial">
+                          <div class="avatar mx-auto">
+                            <img title="." src={{testimonial[1].picture}} width="50%" class="rounded-circle z-depth-1 img-fluid">
+                          </div>
+                          <h4 class="font-weight-bold dark-grey-text mt-4">{{testimonial[1].name}}</h4>
+                          <h6 class="font-weight-bold blue-text my-3">{{testimonial[1].job}}</h6>
+                          <p class="font-weight-normal dark-grey-text">{{testimonial[1].text}}
+                            <i class="fas fa-quote-left pr-2"></i></p>
+                          <div class="orange-text">
+                            <ng-container *ngFor="let _ of [].constructor(testimonial[1].stars)"><i class="fas fa-star"> </i></ng-container>
+                            
+                          </div>
+                        </div>
+                      </div>
+      </div>
       </div>
     </section>
   </div>
@@ -114,35 +69,18 @@
     <section>
       <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our History</h3>
       <hr class="w-header my-4">
-      <p class="lead text-center text-muted pt-2 mb-5">MDB founded to help startups, and it still shapes the way we work today.</p>
+      <p class="lead text-center text-muted pt-2 mb-5">Kingo news's history is full of wonders, read about it here.</p>
       <div class="row">
         <div class="col-lg-8 mx-auto">
           <ol class="timeline">
-            <li class="timeline-element">
-              <h5 class="font-weight-bold dark-grey-text mb-3">Launched our website</h5>
-              <p class="grey-text font-small"><time datetime="2017-02-08">08 Feb 2017</time></p>
-              <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
-                Explicabo amet ipsum fugiat aliquam alias.</p>
-            </li>
-            <li class="timeline-element">
-              <h5 class="font-weight-bold dark-grey-text mb-3">Got the first 100 users</h5>
-              <p class="grey-text font-small"><time datetime="2017-08-17">17 Aug 2017</time></p>
-              <p><img class="img-fluid z-depth-1-half rounded" src="https://mdbootstrap.com/img/Photos/Horizontal/Work/12-col/img%20(6).jpg" alt="..."></p>
-              <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
-                Explicabo amet ipsum fugiat aliquam alias.</p>
-            </li>
-            <li class="timeline-element">
-              <h5 class="font-weight-bold dark-grey-text mb-3">Raised $1.4 million in seed funding</h5>
-              <p class="grey-text font-small"><time datetime="2018-03-26">26 Mar 2019</time></p>
-              <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
-                Explicabo amet ipsum fugiat aliquam alias.</p>
-            </li>
-            <li class="timeline-element">
-              <h5 class="font-weight-bold dark-grey-text mb-3">Team size increased to 20</h5>
-              <p class="grey-text font-small"><time datetime="2018-04-14">14 Apr 2019</time></p>
-              <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda ullam adipisci reiciendis porro natus laudantium similique. 
-                Explicabo amet ipsum fugiat aliquam alias.</p>
-            </li>
+                          <div *ngFor="let history of this.dyn.listHISTORY">
+                            <li class="timeline-element">
+                              <h5 class="font-weight-bold dark-grey-text mb-3">{{history[1].title}}</h5>
+                              <p class="grey-text font-small">{{history[1].date}}</p>
+                              <p><img class="img-fluid z-depth-1-half rounded" src={{history[1].picture}} alt="..."></p>
+                              <p class="text-muted">{{history[1].text}}</p>
+                            </li>
+                          </div>
           </ol>
         </div>
       </div>
@@ -154,54 +92,23 @@
       <h3 class="font-weight-bold pb-2 mb-4">Our Team</h3>
       <p class="text-muted w-responsive mx-auto mb-5">The people behind the curtains.</p>
       <div class="row text-center">
-        <div class="col-md-4 mb-4">
-          <div class="avatar mx-auto">
-            <img src="../../assets/image.png" height="50%" class="rounded z-depth-1-half si" alt="Sample avatar">
-          </div>
-          <h4 class="font-weight-bold dark-grey-text my-4">Amine Ouladyoussef</h4>
-          <h6 class="text-uppercase grey-text mb-3"><strong>Back-end Developer</strong></h6>
-          <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-fb">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-dribbble">
-            <i class="fab fa-dribbble"></i>
-          </a>
-          <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-tw">
-            <i class="fab fa-twitter"></i>
-          </a>
+        <!--START-->
+        <div *ngFor="let team of this.dyn.listTEAM">
+            <div class="col-md-4 mb-4">
+              <div class="avatar mx-auto">
+                <img src={{team[1].picture}} height="50%" class="rounded z-depth-1-half si" alt="...">
+              </div>
+              <h4 class="font-weight-bold dark-grey-text my-4">{{team[1].name}}</h4>
+              <h6 class="text-uppercase grey-text mb-3"><strong>{{team[1].job}}</strong></h6>
+              <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-fb" href={{team[1].facebook}} target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-tw" href={{team[1].twitter}} target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="avatar mx-auto">
-            <img src="../../assets/image.png" width="100%"  class="rounded z-depth-1-half" alt="Sample avatar">
-          </div>
-          <h4 class="font-weight-bold dark-grey-text my-4">ElGoumri Reda</h4>
-          <h6 class="text-uppercase grey-text mb-3"><strong>Front-end Developer</strong></h6>
-          <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-email">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-fb">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-git">
-            <i class="fab fa-github"></i>
-          </a>
-        </div>
-        <div class="col-md-4 mb-4">
-          <div class="avatar mx-auto">
-            <img src="../../assets/image.png"  class="rounded z-depth-1-half si" alt="Sample avatar">
-          </div>
-          <h4 class="font-weight-bold dark-grey-text my-4">Younes Bounzal</h4>
-          <h6 class="text-uppercase grey-text mb-3"><strong>Marketer</strong></h6>
-          <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-li">
-            <i class="fab fa-linkedin-in "></i>
-          </a>
-          <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-tw">
-            <i class="fab fa-twitter "></i>
-          </a>
-          <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-pin">
-            <i class="fab fa-pinterest "></i>
-          </a>
-        </div>
+        <!--END-->
       </div>
     </section>
   </div>
@@ -210,34 +117,11 @@
     <section class="py-5">
       <h1 class="font-weight-bold text-center indigo-text mb-5">Our clients</h1>
       <div class="row">
-        <div class="col-md-6 col-lg-5 offset-lg-1">
-          <div class="view">
-            <img class="img-fluid mx-auto" src="https://mdbootstrap.com/img/Photos/Template/38.png" alt="Sample image">
-          </div>
-          <div class="view">
-            <img class="img-fluid mx-auto" src="https://mdbootstrap.com/img/Photos/Template/34.png" alt="Sample image">
-          </div>
-          <div class="view">
-            <img class="img-fluid mx-auto" src="https://mdbootstrap.com/img/Photos/Template/40.png" alt="Sample image">
-          </div>
-          <div class="view">
-            <img class="img-fluid mx-auto" src="https://mdbootstrap.com/img/Photos/Template/36.png" alt="Sample image">
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-5">
-          <div class="view">
-            <img class="img-fluid mx-auto" src="https://mdbootstrap.com/img/Photos/Template/39.png" alt="Sample image">
-          </div>
-          <div class="view">
-            <img class="img-fluid mx-auto" src="https://mdbootstrap.com/img/Photos/Template/35.png" alt="Sample image">
-          </div>
-          <div class="view">
-            <img class="img-fluid mx-auto" src="https://mdbootstrap.com/img/Photos/Template/41.png" alt="Sample image">
-          </div>
-          <div class="view">
-            <img class="img-fluid mx-auto" src="https://mdbootstrap.com/img/Photos/Template/37.png" alt="Sample image">
-          </div>
-        </div>
+                      <div *ngFor="let client of this.dyn.listCLIENTS">
+                        <div class="view">
+                          <img class="img-fluid mx-auto" src={{client[1].logo}} alt={{client[1].alt}}>
+                        </div>
+                      </div>
       </div>
     </section>
   </div>

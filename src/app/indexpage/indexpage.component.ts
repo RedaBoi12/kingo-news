@@ -1,3 +1,4 @@
+import { DynamificationService } from './../services/dynamification.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexpageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dyn: DynamificationService) { }
 
   ngOnInit(): void {
+    this.dyn.readAboutList();
+    this.dyn.readTestimonialsList();
+    this.dyn.readHistoryList();
+    this.dyn.readTeamList();
+    this.dyn.readClientList();
   }
 
 }
