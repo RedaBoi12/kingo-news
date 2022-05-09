@@ -2,127 +2,124 @@
 <app-loadin></app-loadin>
 <span id="about"></span>
 <div class="container my-5">
-    <section>  
-      <div class="card mb-4">
-        <div class="row">
-          <div class="col-md-6">
-            <img class="img-fluid rounded-left" src="https://mdbootstrap.com/img/Photos/Vertical/7.jpg" alt="project image">
-          </div>
-          <div class="col-md-6 p-5 align-self-center">
-            <h5 class="text-uppercase mb-2"><strong>Kingo News (c)</strong> </h5>
-            <p class="text-muted">Our Goal is to offer the latest and spiciest news 
-                while maintaining total trust with our customers and confirming our sources
-            </p>
-            <ul class="list-unstyled font-small mt-5 mb-0">
-                <div *ngFor="let about of this.dyn.listABOUT">
-                <li>
-                  <p class="text-uppercase mb-2"><strong>{{about[1].title}}</strong></p>
-                  <p class="text-muted mb-4">{{about[1].text}}</p>
-                </li>
-                </div>
-              <li>
-                <p class="text-uppercase mt-4 mb-2"><strong>Share & Contact</strong></p>
-                <div class="d-flex justify-content-start">
-                  <a title="." class="text-muted pr-3" href="#"><i class="fab fa-facebook-f"></i></a>
-                  <a routerLink="contact">Contact us Here</a>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-<span id="testimonials"></span>
-  <div class="container mt-5">
-    <section class="team-section text-center dark-grey-text">
-      <h3 class="font-weight-bold mb-4 pb-2">Testimonials</h3>
-      <p class="text-center w-responsive mx-auto mb-5">Some words from some of our recent loyal customers
-          Please contact them if you suspect they're of not good faith.</p>
-      <div class="row text-center">
-        <div *ngFor="let testimonial of this.dyn.listTESTIMONIALS">
-
-
-                      <div class="col-md-4 mb-4">
-                        <div class="testimonial">
-                          <div class="avatar mx-auto">
-                            <img title="." src={{testimonial[1].picture}} width="50%" class="rounded-circle z-depth-1 img-fluid">
-                          </div>
-                          <h4 class="font-weight-bold dark-grey-text mt-4">{{testimonial[1].name}}</h4>
-                          <h6 class="font-weight-bold blue-text my-3">{{testimonial[1].job}}</h6>
-                          <p class="font-weight-normal dark-grey-text">{{testimonial[1].text}}
-                            <i class="fas fa-quote-left pr-2"></i></p>
-                          <div class="orange-text">
-                            <ng-container *ngFor="let _ of [].constructor(testimonial[1].stars)"><i class="fas fa-star"> </i></ng-container>
-                            
-                          </div>
-                        </div>
-                      </div>
-      </div>
-      </div>
-    </section>
-  </div>
-  <span id="pricing"></span>
-  <app-pricing></app-pricing>
-  <span id="history"></span>
-  <div class="container z-depth-1 my-5 py-5 px-4 px-lg-0">
     <section>
-      <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our History</h3>
-      <hr class="w-header my-4">
-      <p class="lead text-center text-muted pt-2 mb-5">Kingo news's history is full of wonders, read about it here.</p>
-      <div class="row">
-        <div class="col-lg-8 mx-auto">
-          <ol class="timeline">
-                          <div *ngFor="let history of this.dyn.listHISTORY">
-                            <li class="timeline-element">
-                              <h5 class="font-weight-bold dark-grey-text mb-3">{{history[1].title}}</h5>
-                              <p class="grey-text font-small">{{history[1].date}}</p>
-                              <p><img class="img-fluid z-depth-1-half rounded" src={{history[1].picture}} alt="..."></p>
-                              <p class="text-muted">{{history[1].text}}</p>
+        <div class="card mb-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <img class="img-fluid rounded-left" src="https://mdbootstrap.com/img/Photos/Vertical/7.jpg" alt="project image">
+                </div>
+                <div class="col-md-6 p-5 align-self-center">
+                    <h5 class="text-uppercase mb-2"><strong>Kingo News (c)</strong> </h5>
+                    <p class="text-muted">Our Goal is to offer the latest and spiciest news while maintaining total trust with our customers and confirming our sources
+                    </p>
+                    <ul class="list-unstyled font-small mt-5 mb-0">
+                        <div *ngFor="let about of this.dyn.listABOUT">
+                            <li>
+                                <p class="text-uppercase mb-2"><strong>{{about[1].title}}</strong></p>
+                                <p class="text-muted mb-4">{{about[1].text}}</p>
                             </li>
-                          </div>
-          </ol>
-        </div>
-      </div>
-    </section>
-  </div>
-  <span id="team"></span>
-  <div class="container my-5">
-    <section class="team-section text-center dark-grey-text">
-      <h3 class="font-weight-bold pb-2 mb-4">Our Team</h3>
-      <p class="text-muted w-responsive mx-auto mb-5">The people behind the curtains.</p>
-      <div class="row text-center">
-        <!--START-->
-        <div *ngFor="let team of this.dyn.listTEAM">
-            <div class="col-md-4 mb-4">
-              <div class="avatar mx-auto">
-                <img src={{team[1].picture}} height="50%" class="rounded z-depth-1-half si" alt="...">
-              </div>
-              <h4 class="font-weight-bold dark-grey-text my-4">{{team[1].name}}</h4>
-              <h6 class="text-uppercase grey-text mb-3"><strong>{{team[1].job}}</strong></h6>
-              <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-fb" href={{team[1].facebook}} target="_blank">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-tw" href={{team[1].twitter}} target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
+                        </div>
+                        <li>
+                            <p class="text-uppercase mt-4 mb-2"><strong>Share & Contact</strong></p>
+                            <div class="d-flex justify-content-start">
+                                <a title="." class="text-muted pr-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a routerLink="contact">Contact us Here</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <!--END-->
-      </div>
     </section>
-  </div>
-  <span id="clients"></span>
-  <div class="container z-depth-1 my-5">
-    <section class="py-5">
-      <h1 class="font-weight-bold text-center indigo-text mb-5">Our clients</h1>
-      <div class="row">
-                      <div *ngFor="let client of this.dyn.listCLIENTS">
-                        <div class="view">
-                          <img class="img-fluid mx-auto" src={{client[1].logo}} alt={{client[1].alt}}>
+</div>
+<span id="testimonials"></span>
+<div class="container mt-5">
+    <section class="team-section text-center dark-grey-text">
+        <h3 class="font-weight-bold mb-4 pb-2">Testimonials</h3>
+        <p class="text-center w-responsive mx-auto mb-5">Some words from some of our recent loyal customers Please contact them if you suspect they're of not good faith.</p>
+        <div class="row text-center">
+            <div *ngFor="let testimonial of this.dyn.listTESTIMONIALS">
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial">
+                        <div class="avatar mx-auto">
+                            <img title="." src={{testimonial[1].picture}} width="50%" class="rounded-circle z-depth-1 img-fluid">
                         </div>
-                      </div>
-      </div>
+                        <h4 class="font-weight-bold dark-grey-text mt-4">{{testimonial[1].name}}</h4>
+                        <h6 class="font-weight-bold blue-text my-3">{{testimonial[1].job}}</h6>
+                        <p class="font-weight-normal dark-grey-text">{{testimonial[1].text}}
+                            <i class="fas fa-quote-left pr-2"></i></p>
+                        <div class="orange-text">
+                            <ng-container *ngFor="let _ of [].constructor(testimonial[1].stars)"><i class="fas fa-star"> </i></ng-container>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-  </div>
-  
+</div>
+<span id="pricing"></span>
+<app-pricing></app-pricing>
+<span id="history"></span>
+<div class="container z-depth-1 my-5 py-5 px-4 px-lg-0">
+    <section>
+        <h3 class="font-weight-bold text-center dark-grey-text pb-2">Our History</h3>
+        <hr class="w-header my-4">
+        <p class="lead text-center text-muted pt-2 mb-5">Kingo news's history is full of wonders, read about it here.</p>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <ol class="timeline">
+                    <div *ngFor="let history of this.dyn.listHISTORY">
+                        <li class="timeline-element">
+                            <h5 class="font-weight-bold dark-grey-text mb-3">{{history[1].title}}</h5>
+                            <p class="grey-text font-small">{{history[1].date}}</p>
+                            <p><img class="img-fluid z-depth-1-half rounded" src={{history[1].picture}} alt="..."></p>
+                            <p class="text-muted">{{history[1].text}}</p>
+                        </li>
+                    </div>
+                </ol>
+            </div>
+        </div>
+    </section>
+</div>
+<span id="team"></span>
+<div class="container my-5">
+    <section class="team-section text-center dark-grey-text">
+        <h3 class="font-weight-bold pb-2 mb-4">Our Team</h3>
+        <p class="text-muted w-responsive mx-auto mb-5">The people behind the curtains.</p>
+        <div class="row text-center">
+            <!--START-->
+            <div *ngFor="let team of this.dyn.listTEAM">
+                <div class="col-md-4 mb-4">
+                    <div class="avatar mx-auto">
+                        <img src={{team[1].picture}} height="50%" class="rounded z-depth-1-half si" alt="...">
+                    </div>
+                    <h4 class="font-weight-bold dark-grey-text my-4">{{team[1].name}}</h4>
+                    <h6 class="text-uppercase grey-text mb-3"><strong>{{team[1].job}}</strong></h6>
+                    <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-fb" href={{team[1].facebook}} target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a type="button" class="btn-floating btn-sm mx-1 mb-0 btn-tw" href={{team[1].twitter}} target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </div>
+            </div>
+            <!--END-->
+        </div>
+    </section>
+</div>
+<span id="clients"></span>
+<div class="container z-depth-1 my-5">
+    <section class="py-5">
+        <h1 class="font-weight-bold text-center indigo-text mb-5">Our clients</h1>
+        <div class="row">
+            <div *ngFor="let client of this.dyn.listCLIENTS">
+                <div class="view">
+                    <img class="img-fluid mx-auto" src={{client[1].logo}} alt={{client[1].alt}}>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
